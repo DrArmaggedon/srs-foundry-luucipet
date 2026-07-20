@@ -1,0 +1,48 @@
+# 🔄 Migrated from legacy SRS Foundry format (old session: [S-luuci01]) by SRS Foundry Migrator. Date: 2026-07-20.
+Req-ID,Title,Source Tags,Section,Status,Linked Standards,Conflict IDs,Feasibility (D1/D2/D3/D4/D5),Verification,Notes
+REG-0001,FCC Part 15 Subpart C Certification Hold (US),"[STD: RM-0001] | [PRD §13.1]",§18,APPROVED,FCC 47 CFR Part 15 Subpart C §15.247,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0002,FCC Part 15 Subpart B Supplier's Declaration of Conformity (US),"[STD: RM-0002] | [PRD §13.1]",§18,APPROVED,FCC 47 CFR Part 15 Subpart B §15.107/§15.109,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0003,FCC Identifier Marking (US),"[STD: RM-0001] | [PRD §13.1]",§18,APPROVED,FCC ID Labeling Rules,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0004,NRTL Listing Hold for Base Station Electrical Safety (US),"[STD: RM-0013] | [PRD §13.3]",§18,APPROVED,UL 62368-1,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0005,California Proposition 65 Conditional Warning Labeling (US-CA),"[STD: RM-0026] | [PRD §13.7]",§18,APPROVED,California Proposition 65,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0006,Certification Documentation Package Availability (US),"[PRD — ABSENT] | [STD: RM-0001] | [STD: RM-0013]",§18,APPROVED,FCC Part 15 · NRTL documentation requirements,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0007,GNSS Passive-Receiver Intentional-Radiator Exemption Determination (US),"[STD: RM-0009] | [PRD §13.1]",§18,APPROVED,FCC Part 15 intentional radiator rules,—,PASS/PASS/PASS/PASS/PASS,Analysis,In-scope
+REG-0008,ISED Certification Hold (Canada),"[STD: RM-0006] | [PRD §13.1]",§18,APPROVED,ISED RSS-247 · RSS-Gen,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0009,ISED ICES-003 Compliance (Canada),"[STD: RM-0006] | [PRD §13.1]",§18,APPROVED,ISED ICES-003,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0010,Innovation Canada Identifier Marking (Canada),"[STD: RM-0006] | [PRD §13.1]",§18,APPROVED,ISED Labeling Rules,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0011,Certification Documentation Package Availability (Canada),"[PRD — ABSENT] | [STD: RM-0006]",§18,APPROVED,ISED documentation requirements,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0012,GNSS Passive-Receiver Intentional-Radiator Exemption Determination (Canada),"[STD: RM-0009] | [PRD §13.1]",§18,APPROVED,ISED intentional radiator rules,—,PASS/PASS/PASS/PASS/PASS,Analysis,In-scope
+REG-0013,Pre-Launch Certification-Status Gate (US + Canada),"[PRD §13.1] | [PRD §13.7]",§18,APPROVED,See REG-0001 through REG-0012,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0014,RED 2014/53/EU Declaration of Conformity,"[STD: RM-0003] | [PRD §13.1]",§18,APPROVED,EU RED 2014/53/EU,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0015,EU Notified Body Engagement Applicability Determination,"[STD: RM-0004] | [STD: RM-0019]",§18,APPROVED,EU RED 2014/53/EU · ETSI EN 303 645,—,PASS/PASS/PASS/PASS/PASS,Analysis,In-scope
+REG-0016,CE Marking Physical Application,"[STD: RM-0003] | [PRD §13.1]",§18,APPROVED,EU RED 2014/53/EU · GPSR 2023/988,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0017,EU GPSR General Product Safety Compliance Basis,"[STD: RM-0024] | [STD: RM-0031]",§18,APPROVED,GPSR 2023/988 Art 5/6,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0018,EU Authorized Representative Designation,"[STD: RM-0003] | [PRD §13.1]",§18,APPROVED,GPSR 2023/988 Art 4 · RED Art 11,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0019,EU Technical Documentation File Availability,"[PRD — ABSENT] | [STD: RM-0003]",§18,APPROVED,RED 2014/53/EU · GPSR 2023/988,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0020,RoHS Self-Declaration,"[STD: RM-0026] | [PRD §13.7]",§18,APPROVED,EU RoHS 2011/65/EU + 2015/863,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0021,WEEE Producer Registration,"[STD: RM-0027] | [PRD §13.7]",§18,APPROVED,EU WEEE Directive 2012/19/EU,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0022,REACH SVHC Declaration,"[STD: RM-0026] | [PRD §13.7]",§18,APPROVED,EU REACH Annex XVII,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0023,EU Battery Regulation Labelling and CE Marking,"[STD: RM-0014] | [PRD §13.7]",§18,APPROVED,EU Battery Regulation (EU) 2023/1542 Art 6,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0024,EU Battery Regulation Article 11 Removability Exemption Determination,"[STD: RM-0014] | [A-0013]",§18,APPROVED,EU Battery Regulation (EU) 2023/1542 Art 11,—,PASS/PASS/PASS/PASS/PASS,Analysis,In-scope
+REG-0025,EU Cyber Resilience Act Compliance Declaration,"[STD: RM-0021] | [STD: RM-0020]",§18,APPROVED,EU CRA (EU) 2024/2847 Annex I + Art 13–14,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0026,GDPR Compliance Basis,"[STD: RM-0015] | [PRD §13.5]",§18,APPROVED,GDPR (EU) 2016/679 + Art 30,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0027,EU Packaging and Packaging Waste Regulation Compliance Declaration,"[STD: RM-0027] | [PRD §13.7]",§18,APPROVED,EU PPWR,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0028,UKCA Marking Declaration,"[STD: RM-0005] | [PRD §13.1]",§18,APPROVED,UK SI 2017/1206,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0029,UK Approved Body Engagement Applicability Determination,"[STD: RM-0005]",§18,APPROVED,UK SI 2017/1206,—,PASS/PASS/PASS/PASS/PASS,Analysis,In-scope
+REG-0030,UK Responsible Person Designation,"[STD: RM-0005] | [PRD §13.1]",§18,APPROVED,UK SI 2017/1206,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0031,UK PSTI Act 2022 Compliance Declaration,"[STD: RM-0022] | [PRD §13.5]",§18,APPROVED,UK PSTI Act 2022,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0032,UK GDPR Compliance Basis,"[STD: RM-0016] | [PRD §13.5]",§18,APPROVED,UK GDPR + DPA 2018,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0033,UK Materials and Environmental Compliance Declaration,"[STD: RM-0026] | [STD: RM-0027]",§18,APPROVED,UK REACH · UK RoHS · UK WEEE,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0034,UK Producer Responsibility Packaging Compliance Declaration,"[STD: RM-0027] | [PRD §13.7]",§18,APPROVED,UK Packaging Regulations,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0035,Pre-Launch Certification-Status Gate (EU + UK),"[PRD §13.1] | [PRD §13.7]",§18,APPROVED,See REG-0014–0034 + REG-0045/0046,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0036,RCM Marking Declaration (AU/NZ),"[STD: RM-0007] | [PRD §13.1]",§18,APPROVED,AS/NZS 4268:2017,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0037,ACMA Supplier Code Registration,"[STD: RM-0007]",§18,APPROVED,ACMA Supplier Code,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0038,AU/NZ Responsible Supplier Designation,"[STD: RM-0007] | [PRD §13.1]",§18,APPROVED,AU/NZ In-Market Requirements,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0039,AU/NZ Certification Documentation Package,"[STD: RM-0007]",§18,APPROVED,AU/NZ Documentation Requirements,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0040,GNSS Exemption Determination (AU/NZ),"[STD: RM-0009] | [PRD §13.1]",§18,APPROVED,RCM / AS/NZS 4268:2017,—,PASS/PASS/PASS/PASS/PASS,Analysis,In-scope
+REG-0041,CCPA/CPRA Contingent Market-Access Declaration,"[STD: RM-0017] | [PRD §13.5]",§18,APPROVED,CCPA/CPRA (contingent),—,PASS/PASS/PASS/PASS/PASS,Analysis,In-scope
+REG-0042,Post-Certification Regulatory-Change Monitoring,"[PRD — ABSENT] | [PRD §13.7]",§18,APPROVED,All applicable per-market regulations,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0043,Certification and DoC Archival Retention,"[PRD — ABSENT]",§18,APPROVED,Per-market legal minimums (TBC),—,PASS/PASS/PASS/MARGINAL/PASS,Inspection,In-scope · A-0025 pending
+REG-0044,Pre-Launch Certification-Status Gate (All Markets),"[PRD §13.1] | [PRD §13.7]",§18,APPROVED,See REG-0013/0035/0036–0043/0045/0046,—,PASS/PASS/PASS/PASS/PASS,Inspection,In-scope
+REG-0045,GNSS Exemption Determination (EU),"[STD: RM-0009] | [PRD §13.1]",§18,APPROVED,EU RED 2014/53/EU · RM-0009,—,PASS/PASS/PASS/PASS/PASS,Analysis,In-scope · RM-0009 addendum
+REG-0046,GNSS Exemption Determination (UK),"[STD: RM-0009] | [PRD §13.1]",§18,APPROVED,UK SI 2017/1206 · RM-0009,—,PASS/PASS/PASS/PASS/PASS,Analysis,In-scope · RM-0009 addendum

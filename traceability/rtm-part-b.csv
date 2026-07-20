@@ -1,0 +1,204 @@
+# 🔄 Migrated from legacy SRS Foundry format (old session: [S-luuci01]) by SRS Foundry Migrator. Date: 2026-07-20.
+# [S-luucipet] RTM — Part B (§5–§10)
+
+| Req-ID | Title | Source Tags | Section | Status | Linked Standards | Conflict IDs | Feasibility Score (D1–D5) | Verification Method | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| SRS-FUNC-0043 | OTA Capability Mandatory on All Collar Variants | [PRD §9.1] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Demonstration | in-scope; xref FUNC-0034 |
+| SRS-FUNC-0044 | OTA Capability Mandatory on All Base Station Tiers | [PRD §9.1] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Demonstration | in-scope; xref FUNC-0043 |
+| SRS-FUNC-0045 | Cloud-to-Base OTA Transport Protocol (TLS 1.3) | [PRD §9.2],[PRD §6.5],[PRD §11.2] | §5 | APPROVED | ETSI EN 303 645:2025 (RM-0019) | CR-0005 | PASS/PASS/PASS/PASS/PASS | Test | in-scope; TLS 1.3 per CR-0005; xref CONN-0014 |
+| SRS-FUNC-0046 | Base Station Staging of Collar OTA Images | [PRD §9.2] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref FUNC-0047 |
+| SRS-FUNC-0047 | Base-to-Collar OTA Image Delivery Over Secured BLE Link | [PRD §9.2] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope; xref CONN-0009, SEC-0001, SEC-0002 |
+| SRS-FUNC-0048 | Base Station Self-OTA Without User Action | [PRD §11.5] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Demonstration | in-scope |
+| SRS-FUNC-0049 | Collar OTA Install Restricted to Charging-Cradle-Docked State | [PRD §9.2] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-FUNC-0050 | Docked-Install Gate Shall Not Be Remotely Bypassable | [PRD §9.2] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-FUNC-0051 | Minimum Battery Reserve Before OTA Install (≥10% SoC) | [PRD §9.2],[PRD §10.4] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-FUNC-0052 | Minimum OTA Image Signature Strength (≥256-bit ECDSA/RSA-2048) | [PRD §9.3] | §5 | APPROVED | ETSI EN 303 645:2025 (RM-0019) | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-FUNC-0053 | OTA Image Signature Verification Before Commit | [PRD §9.3] | §5 | APPROVED | ETSI EN 303 645:2025 (RM-0019) | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-FUNC-0054 | Anti-Rollback via Monotonic Version Counter | [PRD §9.3] | §5 | APPROVED | EU CRA 2024/2847 (RM-0021) | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-FUNC-0055 | Atomic OTA Installation | [PRD §9.4] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-FUNC-0056 | Dual-Bank Auto-Revert on Boot Failure | [PRD §9.4],[PRD §11.5] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-FUNC-0057 | No Unrecoverable State on Power/Connection Loss During Install | [PRD §9.4] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Analysis | in-scope |
+| SRS-FUNC-0058 | Device-Side OTA Update State Reporting | [PRD §9.5] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-FUNC-0059 | App Notification of Available OTA Update | [PRD §9.5],[EXTERNAL: Mobile App team] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection (external conformance evidence) | EXTERNAL |
+| SRS-FUNC-0060 | App Display of OTA Update State | [PRD §9.5],[EXTERNAL: Mobile App team] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection (external conformance evidence) | EXTERNAL |
+| SRS-FUNC-0061 | SBOM Production Per OTA Release | [PRD §9.5] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope; lifetime SBOM → §16 |
+| SRS-FUNC-0062 | Tier-2 Classifier Delivery Restricted to Embedded OTA Components | [PRD §9.5] | §5 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-PERF-0001 | Mini Variant Battery-Life Conformance | [PRD §12.1],[PRD §10.4],[CR-0002],[PRD §15.6] | §6 | APPROVED | — | CR-0002 | PASS/PASS/PASS/PASS/PASS | Analysis | in-scope |
+| SRS-PERF-0002 | Max Variant Battery-Life Conformance | [PRD §12.1],[PRD §10.4],[CR-0002],[PRD §15.6] | §6 | APPROVED | — | CR-0002 | PASS/PASS/PASS/PASS/PASS | Analysis | in-scope |
+| SRS-PERF-0003 | Classification Latency Ceiling (<2 s) | [PRD §12.1] | §6 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-PERF-0004 | Base Station Cloud-Upload Latency Ceiling (<30 s) | [PRD §12.1] | §6 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-PERF-0005 | GNSS Time-to-First-Fix Ceiling (<60 s, warm/A-GPS) | [PRD §12.1] | §6 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-PERF-0006 | Collar Boot-Time Ceiling (<3 s) | [PRD §12.1],[ASSUMPTION: A-0019] | §6 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-PERF-0007 | Home/Away Status Update Latency Ceiling (≤adv interval + 10 s) | [PRD §12.1] | §6 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-PERF-0008 | CCF Twist-Lock Engagement Time Ceiling (≤5 s) | [PRD §12.1] | §6 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-SAFE-0001 | CCF-S Zone 2 Breakaway Force Window (Feline) 15-20 N | [PRD §10.1.3.2b],[PRD §13.2],[STD: EU GPSR],[ASSUMPTION: A-0017] | §7 | APPROVED | GPSR 2023/988 (RM-0024/RM-0031) | — | PASS/MARGINAL/PASS/PASS/PASS | Test | in-scope |
+| SRS-SAFE-0002 | CCF-M Zone 2 Breakaway Force Window (Canine Med) 20-28 N | [PRD §10.1.3.2b],[PRD §13.2],[STD: EU GPSR],[ASSUMPTION: A-0017],[ASSUMPTION: A-0020] | §7 | APPROVED | GPSR 2023/988 (RM-0024/RM-0031) | — | PASS/MARGINAL/PASS/PASS/PASS | Test | in-scope |
+| SRS-SAFE-0003 | CCF-L Zone 2 Breakaway Force Window (Canine Lg) 28-40 N | [PRD §10.1.3.2b],[PRD §10.1.4],[PRD §13.2],[STD: EU GPSR],[ASSUMPTION: A-0017],[ASSUMPTION: A-0020] | §7 | APPROVED | GPSR 2023/988 (RM-0024/RM-0031) | — | PASS/MARGINAL/PASS/PASS/PASS | Test | in-scope |
+| SRS-SAFE-0004 | CCF-L Force-Window Contingency >26 g → floor 30 N | [PRD §10.1.4] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Analysis | in-scope |
+| SRS-SAFE-0005 | Zone 2 Single-Use Restriction | [PRD §10.1.3.2b],[PRD §13.2] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-SAFE-0006 | Zone 2 No-Detached-Fragment on Fracture | [PRD §10.1.3.2b] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-SAFE-0007 | Zone 2 Post-Fracture Surface Bluntness | [PRD §10.1.3.2b] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-SAFE-0008 | Zone 2 Visible Fracture Indicator | [PRD §10.1.3.2b],[PRD §13.2] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-SAFE-0009 | Zone 1 Structural Retention Force ≥50 N | [PRD §10.1.3.1],[PRD §10.1.3.4],[PRD §13.2] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-SAFE-0010 | Zone 1 Survival Through Zone 2 Fracture | [PRD §10.1.3.1] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-SAFE-0011 | Twist-Lock Axial Retention Force >100 N | [PRD §10.1.3.1] | §7 | APPROVED | — | CR-0009 | PASS/PASS/PASS/PASS/PASS | Test | in-scope; Priority→CRITICAL per CR-0009 |
+| SRS-SAFE-0012 | Twist-Lock Retention Under 50 g Pet-Motion Inertial Loading | [PRD §10.1.3.2a] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-SAFE-0013 | No-Wear-Without-Intact-Zone-2 | [PRD §10.1.3.6] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-SAFE-0014 | Device Separation-Signature Emission | [PRD §10.1.3.6] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-SAFE-0015 | [EXTERNAL] CCF-Replacement-Required Notification | [PRD §10.1.3.6],[EXTERNAL: Mobile App team] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection (external conformance evidence) | EXTERNAL |
+| SRS-SAFE-0016 | Zone 2 Non-Fracture Under Chew-Compressive Load <250 N | [PRD §13.2] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-SAFE-0017 | CCF Body Chew-Penetration Resistance ≥30 s @250 N | [PRD §13.2] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-SAFE-0018 | Device Enclosure Chew Resistance (qualitative) | [PRD §10.1.2],[PRD — ABSENT] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Analysis | in-scope |
+| SRS-SAFE-0019 | Device-Absent Socket Entrapment-Hazard Avoidance (qualitative) | [PRD §10.1.3.5],[PRD §13.2] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Analysis | in-scope |
+| SRS-SAFE-0020 | Device-Absent Socket Probe-Clearance Criterion (12 mm) | [PRD §10.1.3.5],[ASSUMPTION: A-0010] | §7 | APPROVED | — | — | PASS/MARGINAL/PASS/PASS/PASS | Test | in-scope |
+| SRS-SAFE-0021 | Animal-Contact Material Non-Toxicity | [PRD §10.1.2],[PRD §13.2] | §7 | APPROVED | REACH/RoHS/Prop 65 → §17 (RM-0026) | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-SAFE-0022 | Battery-Ingestion Warning Labeling | [PRD §13.2],[ASSUMPTION: A-0011] | §7 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-SEC-0001 | BLE Link-Layer AES-128 CCM Encryption | [PRD §6.3],[PRD §6.7],[PRD §8.2],[PRD §12.3],[STD: RM-0019] | §8 | APPROVED | ETSI EN 303 645:2025 (RM-0019) | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-SEC-0002 | LE Secure Connections Pairing | [PRD §6.3],[PRD §6.7],[PRD §12.3],[STD: RM-0019] | §8 | APPROVED | ETSI EN 303 645:2025 (RM-0019) | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-SEC-0003 | TLS 1.3 Exclusivity for All Base-to-Cloud Transport | [PRD §6.5],[PRD §11.2],[PRD §12.3],[STD: RM-0019] | §8 | APPROVED | ETSI EN 303 645:2025 (RM-0019) | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-SEC-0004 | Unique Cryptographic Identity at Manufacturing | [PRD §12.3],[STD: RM-0019] | §8 | APPROVED | ETSI EN 303 645:2025 (RM-0019) | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-SEC-0005 | Secure Boot with Hardware Root of Trust | [PRD §12.3],[PRD §10.7],[STD: RM-0019] | §8 | APPROVED | ETSI EN 303 645:2025 (RM-0019) | — | PASS/PASS/MARGINAL/PASS/PASS | Test | in-scope; DVT watch |
+| SRS-SEC-0006 | Public Vulnerability-Disclosure Policy Before Launch | [PRD §12.3],[PRD §13.5],[STD: RM-0019],[STD: RM-0021] | §8 | APPROVED | RM-0019; RM-0021 | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-DATA-0001 | Classification Record Content | [PRD §7.5] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-DATA-0002 | Confidence Score Bound | [PRD §7.5] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-DATA-0003 | Record Timestamp Accuracy | [PRD §7.5] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-DATA-0004 | GNSS Context on Max Variant | [PRD §7.5] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-DATA-0005 | On-Device Storage Duration | [PRD §7.5],[PRD §10.6] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-DATA-0006 | Retention Through Power Loss | [PRD §10.6] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-DATA-0007 | Storage Corruption Detection | [PRD §10.6] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-DATA-0008 | Classification Independent of Connectivity | [PRD §7.6] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-DATA-0009 | Record Forwarding Without Corruption | [PRD §7.6] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-DATA-0010 | Record Forwarding Without Sequence Loss | [PRD §7.6] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-DATA-0011 | Raw Sensor Data Transmission Boundary | [PRD §7.7] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-DATA-0012 | On-Device Normalization | [PRD §7.7] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Analysis | in-scope |
+| SRS-DATA-0013 | No Cloud Round-Trip for Classification | [PRD §7.7] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Demonstration | in-scope |
+| SRS-DATA-0014 | Raw Sample Retention Minimization | [PRD §7.7],[STD: RM-0015] | §9 | APPROVED | GDPR Art.25 (RM-0015) | — | PASS/PASS/PASS/PASS/PASS | Analysis | in-scope |
+| SRS-DATA-0015 | Buffered Data Retention Until Acknowledgement | [PRD §8.4] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref CONN-0008 |
+| SRS-DATA-0016 | No Buffer Clear on Disconnect Alone | [PRD §8.4] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref CONN-0010 |
+| SRS-DATA-0017 | Stale-Data Flag on Delayed Upload | [PRD §8.7] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-DATA-0018 | Data Minimization for Personal Data | [STD: RM-0015],[STD: RM-0016],[STD: RM-0018] | §9 | APPROVED | RM-0015; RM-0016; RM-0018 | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-DATA-0019 | Purpose Limitation | [STD: RM-0015],[STD: RM-0016],[STD: RM-0018] | §9 | APPROVED | RM-0015; RM-0016; RM-0018 | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-DATA-0020 | On-Device Data Deletion Support | [STD: RM-0015],[STD: RM-0016],[STD: RM-0019] | §9 | APPROVED | RM-0015; RM-0016; RM-0019 | — | MARGINAL/PASS/PASS/PASS/PASS | Demonstration | in-scope; D1-MARGINAL |
+| SRS-DATA-0021 | On-Device Data Access Support | [STD: RM-0015],[STD: RM-0016],[STD: RM-0018] | §9 | APPROVED | RM-0015; RM-0016; RM-0018 | — | MARGINAL/PASS/PASS/PASS/PASS | Demonstration | in-scope; D1-MARGINAL |
+| SRS-DATA-0022 | Consumer Privacy Rights Contingency (CCPA/CPRA) | [STD: RM-0017] | §9 | APPROVED | CCPA/CPRA INDICATIVE (RM-0017) | — | PASS/PASS/PASS/PASS/PASS | Analysis | in-scope; contingent |
+| SRS-DATA-0023 | Data-at-Rest Encryption | [STD: RM-0015],[STD: RM-0019] | §9 | APPROVED | RM-0015; RM-0019 | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-DATA-0024 | Transport to Cloud Device-Management Layer | [PRD §6.1],[ASSUMPTION: A-0015] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-DATA-0025 | Breakaway Record Commit Timing | [ASSUMPTION: A-0018] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-DATA-0026 | Breakaway Record Survivability | [ASSUMPTION: A-0018] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-DATA-0027 | Breakaway Record Transmission Trigger | [ASSUMPTION: A-0018] | §9 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0001 | Collar BLE Peripheral Role | [PRD §6.3], [PRD §8.1], [PRD §10.3] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0002 | Base Station BLE Central Role | [PRD §11.2] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0003 | Minimum Concurrent Collar Sessions | [PRD §8.1], [PRD §11.2] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0004 | Default BLE Advertising Interval | [PRD §6.3], [PRD §8.1] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0005 | Configurable BLE Advertising Interval Range | [PRD §8.1] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0006 | Advertising Continuity During Active Connection | [PRD §8.1], [PRD §10.3] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0007 | BLE Address Randomization | [PRD §8.1], [PRD §10.3] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0008 | Minimum BLE Transmit Power | [PRD §10.3] | §10 | APPROVED | — | CR-0018 (XSC-0009) | PASS/PASS/PASS/PASS/PASS | Test | in-scope; back-XR→HW-0019 per CR-0018 |
+| SRS-INT-0009 | Minimum BLE Open-Air Range | [PRD §10.3], [PRD §12.1] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0010 | BLE Link-Layer Encryption Algorithm | [PRD §6.3], [PRD §8.2], [PRD §10.3] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0011 | BLE Pairing via LE Secure Connections | [PRD §6.3], [PRD §8.2] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0012 | QR Out-of-Band Pairing Mechanism | [PRD §6.3], [PRD §8.2] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0013 | BLE Radio Regulatory Conformance | [PRD §13.1] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0014 | Bluetooth SIG Qualification | [STD: Bluetooth SIG Qualification (QDID)], [PRD §13.1] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-INT-0015 | RF Human-Exposure Assessment | [PRD §13.1] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Analysis | in-scope |
+| SRS-INT-0016 | Wi-Fi Radio Band and Standard | [PRD §4.2], [PRD §6.5] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0017 | Cloud Uplink Transport Encryption | [PRD §6.5], [PRD §11.2], [PRD §12.3] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0018 | Default Access-Point Configuration Compatibility | [PRD §12.6] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0019 | Minimum Wi-Fi Uplink Signal Condition | [ASSUMPTION A-0009] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0020 | Wi-Fi Radio Regulatory Conformance | [PRD §13.1] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0021 | GNSS Interface Presence on Max | [PRD §4.1], [PRD §10.2.2] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0022 | GNSS Interface Absence on Mini | [PRD §4.1] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-INT-0023 | Configurable GNSS Fix Interval Range | [PRD §4.1], [PRD §10.2.2] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0024 | Default GNSS Fix Interval | [PRD §4.1], [PRD §10.2.2] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0025 | A-GPS Assistance Data Delivery | [PRD §10.2.2] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0026 | A-GPS Assistance Data Validity Window | [PRD §10.2.2] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0027 | GNSS Power Gating During HOME State | [PRD §10.2.2], [PRD §6.4], [ASSUMPTION A-0016] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0028 | GNSS Fix Acquisition Timeout | [PRD §10.2.2], [PRD §15.5] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0029 | Warm GNSS Time-to-First-Fix Ceiling | [PRD §12.1] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0030 | GNSS Intentional-Radiator Exemption Status | [PRD §13.1] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Analysis | in-scope |
+| SRS-INT-0031 | Pogo-Pin Contact Count and Function | [PRD §10.5] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-INT-0032 | Magnetic Charging Alignment | [PRD §6.6], [PRD §10.5] | §10 | APPROVED | — | CR-0019 (XSC-0010) | PASS/PASS/PASS/PASS/PASS | Demonstration | in-scope; Priority→CRITICAL per CR-0019 |
+| SRS-INT-0033 | First-Attempt Docking Seating Rate | [PRD §10.1.3.5] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0034 | Full-Charge Time Ceiling | [PRD §10.5], [PRD §12.4] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0035 | IP67 Rating When Undocked | [PRD §6.6], [PRD §10.5], [PRD §13.4] | §10 | APPROVED | — | CR-0016 (XSC-0007) | PASS/PASS/PASS/PASS/PASS | Test | in-scope; back-XR→HW-0004 per CR-0016 |
+| SRS-INT-0036 | Charging Socket Self-Drainage | [PRD §10.5], [PRD §10.1.3.5] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0037 | Charging-Access Removal Rotation | [PRD §6.6], [PRD §10.5] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Demonstration | in-scope |
+| SRS-INT-0038 | Device-Absent Socket Entrapment Geometry | [ASSUMPTION A-0010], [PRD §10.1.3.5] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0039 | Bayonet Lug Configuration | [PRD §10.1.3.2a] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-INT-0040 | Lock/Unlock Rotation Angle | [PRD §10.1.3.2a] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0041 | Lug Ramp Self-Locking Profile | [PRD §10.1.3.2a] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-INT-0042 | Twist-Lock Lug Dimensions | [PRD §10.1.3.2a] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-INT-0043 | Asymmetric Keying Lug | [PRD §10.1.3.2a] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-INT-0044 | Detent Release Torque Window | [PRD §10.1.3.2a] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0045 | Twist-Lock Axial Retention Floor | [PRD §10.1.3.1], [PRD §10.1.3.2a] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0046 | Twist-Lock Engagement Insertion Force Ceiling | [PRD §10.1.1], [PRD §10.1.3.2a] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0047 | Twist-Lock Engagement Rotation Torque Ceiling | [PRD §10.1.1], [PRD §10.1.3.2a] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0048 | Engagement Feedback | [PRD §10.1.3.2a] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Demonstration | in-scope |
+| SRS-INT-0049 | Magnetic Engagement Assist Range | [PRD §10.1.3.2a] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0050 | Tool-Free Twist-Lock Operation | [PRD §10.1.3.2a], [PRD §12.4] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Demonstration | in-scope |
+| SRS-INT-0051 | Twist-Lock Engagement Time Ceiling | [PRD §12.1], [PRD §12.4] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0052 | Common Device-Enforced Protocol Across Variants | [PRD §4.3], [ASSUMPTION A-0001] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-INT-0053 | Payload Type — Behavioral Classification Record | [PRD §7.5], [PRD §8.3] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0054 | Payload Type — BLE Sighting Report | [PRD §8.5], [PRD §11.3] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0055 | Payload Type — Cloud Downlink | [PRD §8.6] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0056 | Base Station Payload Content Opacity | [PRD §8.3] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-INT-0057 | Collar Buffer Retention Pending Acknowledgment | [PRD §8.4] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0058 | No FIFO Clear on Disconnect Alone | [PRD §8.4] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0059 | Sequence-Loss Detection | [PRD §7.6] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-INT-0060 | Corruption-Free Record Forwarding | [PRD §7.6] | §10 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+
+
+| SRS-RELI-0001 | IP67 Rating Retention Over Full Service Lifetime | [PRD §12.2] | §13 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Analysis | in-scope; CRITICAL; xref SRS-HW-0003,SRS-ENV-0005,SRS-ENV-0006 |
+| SRS-RELI-0002 | Collar Device Operational Availability | [PRD §12.2] | §13 | APPROVED | — | — | PASS/MARGINAL/PASS/PASS/PASS | Test | in-scope; HIGH; MARGINAL D4: measurement window absent; xref SRS-HW-0025,SRS-INT-0031,SRS-INT-0032 |
+| SRS-RELI-0003 | Base Station Uptime | [PRD §12.2] | §13 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; HIGH; 99.5% over rolling 90-day window |
+| SRS-RELI-0004 | OTA Update Success Rate | [PRD §12.2] | §13 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; HIGH; xref SRS-FUNC-0055,SRS-FUNC-0056,SRS-FUNC-0057 |
+
+| SRS-ENV-0001 | Device Operating Temperature Range | [PRD §12.5] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-ENV-0002 | Device Storage Temperature Range | [PRD §12.5] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-ENV-0003 | CCF Thermal-Cycling Exposure | [PRD §12.5], [ASSUMPTION: A-0003] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-ENV-0004 | Device Damp-Heat Exposure | [PRD §13.4] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-ENV-0005 | Prohibition on IP67 Claims for CCF-Mated Configuration | [PRD §4.1 fn²], [PRD §13.4] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-ENV-0006 | Independent Laboratory Confirmation of IP67 Rating | [PRD §13.4] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-ENV-0007 | Twist-Lock Channel Water-Ingress Exclusion | [PRD §13.4] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-ENV-0008 | Ingress Seal-Boundary Interior Placement | [PRD §13.4] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-ENV-0009 | Drop Survival | [PRD §12.5] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-ENV-0010 | Mechanical Shock Resistance | [PRD §13.4] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-ENV-0011 | Vibration Resistance | [PRD §13.4] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-ENV-0012 | Enclosure UV Stabilization | [PRD §12.5] | §12 | APPROVED | — | — | PASS/PASS/MARGINAL/MARGINAL/PASS | Analysis | in-scope |
+| SRS-ENV-0013 | CCF UV Aging Exposure | [PRD §12.5] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-ENV-0014 | CCF Chemical-Fluid Exposure | [PRD §12.5] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-ENV-0015 | Post-Thermal-Cycling Zone 2 Fuse-Force Window Retention | [PRD §12.5] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-ENV-0016 | Post-Thermal-Cycling Twist-Lock Detent-Torque Window Retention | [PRD §12.5] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-ENV-0017 | Post-UV-Aging Zone 2 Fuse-Force Window Retention | [PRD §12.5] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-ENV-0018 | Post-Chemical-Exposure Zone 2 Fuse-Force Window Retention | [PRD §12.5] | §12 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-UX-0001 | BLE pairing + first sync within 3 min of user initiating pairing mode | [PRD §12.4] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-UX-0002 | QR-code OOB pairing as primary method (LE Secure Connections) | [PRD §5.6] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Demonstration | in-scope; xref SRS-CONN-0003 (§4) |
+| SRS-UX-0003 | Single physical mechanism (button) to initiate pairing mode | [PRD §5.6] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope |
+| SRS-UX-0004 | Distinct pairing-mode LED indication distinguishable from all other states | [PRD §5.6] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref SRS-UX-0012/0013 (§14.3); MODIFIED v3→v4 (CR-0024) |
+| SRS-UX-0005 | Auto-exit pairing mode after 3 min with no pairing completion | [PRD §5.6] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-UX-0006 | Audible click + tactile detent on Twist-Lock engagement | [PRD §10.1.3.2a] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref §11 (COMP-HW) |
+| SRS-UX-0007 | Magnetic-assist alignment force ≤5 mm before lug channel engagement | [PRD §10.1.3.2a] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref §11 (COMP-HW) |
+| SRS-UX-0008 | Twist-Lock engage ≤5 N axial + ≤0.10 N·m rotational torque | [PRD §10.1.3.2a] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref §11 (COMP-HW) |
+| SRS-UX-0009 | Twist-Lock removal ≤0.15 N·m detent-release torque | [PRD §10.1.3.2a] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref §11 (COMP-HW) |
+| SRS-UX-0010 | ≥90% first-attempt pogo-pin charging seating rate (≥20 participants) | [PRD §10.1.3.5] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref §11 (COMP-HW) |
+| SRS-UX-0011 | Asymmetric lug keying prevents incorrect-orientation insertion (poka-yoke) | [PRD §10.1.3.2a] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref §11 (COMP-HW) |
+| SRS-UX-0012 | LED communicates 7 operational states: boot, pairing, normal, low-bat, charging, fault, OTA | — | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; master LED-state list; xref UX-0013/0014/0022/0023/0028 |
+| SRS-UX-0013 | Each operational state = unique LED color/blink-cadence/duty-cycle pattern | — | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref SRS-UX-0012; priority MEDIUM→HIGH per CR-0023; MODIFIED v3→v4 (CR-0023) |
+| SRS-UX-0014 | Critical/non-critical state differentiation via temporal pattern (colorblind-accessible) | — | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Analysis | in-scope; colorblind-accessibility; xref SRS-UX-0012 |
+| SRS-UX-0015 | Twist-Lock engagement click ≥40 dBA at 30 cm (ambient ≤30 dBA) | — | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref §11 (COMP-HW) |
+| SRS-UX-0016 | Base station LEDs: AC power, charging, cloud-connected, OTA in progress | [PRD §11.6] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-UX-0017 | Base station LED auto-dimming <50 lux or user-configurable quiet-hours (should) | [PRD §11.6],[ASSUMPTION: A-0008] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; should (recommended); xref A-0008 |
+| SRS-UX-0018 | Base station initial setup ≤5 min (Wi-Fi + cloud registration) | [PRD §12.4] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref A-0009 (Wi-Fi assumption) |
+| SRS-UX-0019 | CCF variant visual/tactile differentiation (size, color, or texture) | [PRD §12.4] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope; CCF variant differentiation |
+| SRS-UX-0020 | CCF Zone 1 clamp install ≤60 s without tools (wrap-and-lock) | [PRD §12.4] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-UX-0021 | CCF Zone 2 visible fracture indicator discernible at 60 cm without magnification | [PRD §10.1.3.2b],[PRD §10.1.3.6] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Inspection | in-scope; xref SRS-SAFE-0008 (§7); CR-0022; VM Test→Inspection per V-Method v2 |
+| SRS-UX-0022 | Distinct low-battery LED at ≤20% SoC, persists until charging confirmed | [PRD §10.4] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref SRS-UX-0012/0013 (§14.3); low-battery = ≤20% SoC |
+| SRS-UX-0023 | Distinct fault-state LED pattern (sensor fail, NVM corruption, BLE init fail) | — | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref SRS-UX-0012/0013 (§14.3); MODIFIED v3→v4 (CR-0024) |
+| SRS-UX-0024 | Confirmation feedback (LED/haptic) within 1 s of user physical action | — | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+| SRS-UX-0025 | Battery SoC % (0–100) in every sync payload for app display | [PRD §12.4] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; interface obligation → EXTERNAL: Mobile App team |
+| SRS-UX-0026 | GNSS fix interval in status payload every sync (Max variant, app battery estimate) | [PRD §12.4] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; Max variant only; interface obligation → EXTERNAL: Mobile App team |
+| SRS-UX-0027 | Breakaway event record with elevated TX priority on next base contact | [PRD §10.1.3.6],[PRD §12.4],[ASSUMPTION: A-0018] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; secondary to UX-0021; xref A-0018, SRS-UX-0021 |
+| SRS-UX-0028 | Distinct LED pattern per OTA state (Download/Verify/Pending/Install/Success/Fail) | [PRD §9.5] | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope; xref §5 (OTA functional states) |
+| SRS-UX-0029 | LED continuously active during OTA; no dark period >10 s in states >30 s | — | §14 | APPROVED | — | — | PASS/PASS/PASS/PASS/PASS | Test | in-scope |
+
+*RTM Part B Row Count: 194 (§5:20 · §6:8 · §7:22 · §8:6 · §9:27 · §10:60 · §12:18 · §13:4 · §14:29). Part A (§1–§4) = 89 rows. Combined = 283 — Reconciled MATCH (post-§14 UX UPDATE-ROW).*

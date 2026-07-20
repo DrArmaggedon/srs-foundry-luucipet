@@ -1,0 +1,71 @@
+> 🔄 Migrated from legacy SRS Foundry format (old session: [S-luuci01]) by SRS Foundry Migrator. Date: 2026-07-20.
+
+# [S-luucipet] V-Method Report §11 — Hardware / Physical & Mechanical Requirements
+
+**Scope:** SRS-HW-0001 – SRS-HW-0028 (28 requirements, §11 v1)
+**Checks applied:** (1) Presence · (2) Valid type (Test | Inspection | Analysis | Demonstration, no invented/compound types) · (3) Appropriateness to the requirement's nature · (4) Method/criterion coherence (Test requires a measurable, unit-bearing criterion) · (5) Regulatory alignment (no contradiction with a Regulatory Map-mandated approach)
+
+| SRS-HW-ID | Method | Present? | ValidType? | Appropriate? | Verdict | Reason |
+|---|---|---|---|---|---|---|
+| SRS-HW-0001 | Test | Yes | Yes | Yes | PASS | Numeric mass bound (≤10 g) verifiable by scale measurement under defined conditions (fully assembled, excl. CCF/collar). Canonical Test. |
+| SRS-HW-0002 | Test | Yes | Yes | Yes | PASS | Same reasoning as HW-0001 for the ≤22 g bound. |
+| SRS-HW-0003 | Test | Yes | Yes | Yes | PASS | IP67 is a standardized pass/fail procedure with numeric parameters (immersion depth/duration per IEC 60529). Test is the canonical method; aligns with RM-0028 (CONFIRMED), which is itself a test-based ingress standard — no regulatory contradiction. |
+| SRS-HW-0004 | Test | Yes | Yes | Yes | PASS | Same IP67 test procedure applied to the undocked/pogo-pin-exposed configuration. Appropriate, aligned with RM-0028. |
+| SRS-HW-0005 | Inspection | Yes | Yes | Yes | PASS | Simple presence/visual-examination requirement (LED indicator exists). No numeric criterion is claimed — Inspection is correct; Test would be over-specified for a presence check. |
+| SRS-HW-0006 | Inspection | Yes | Yes | Yes | PASS | Wall-thickness ≥1.5 mm is a static geometric dimension verified by examination with measurement tooling (calipers/CMM/go-no-go gauge) rather than an operating-condition test — Inspection is a defensible method for static dimensional conformance and is consistent with sibling geometric items (HW-0007). |
+| SRS-HW-0007 | Inspection | Yes | Yes | Yes | PASS | Qualitative solid-section/no-penetration geometric examination — Inspection appropriate, no operational behavior involved. |
+| SRS-HW-0008 | Inspection | Yes | Yes | Yes | PASS | Self-draining geometry is a static design-examination item — Inspection appropriate. |
+| SRS-HW-0009 | Inspection | Yes | Yes | Yes | PASS | Material-composition (PA66-GF30) confirmed via material certificate/documentation examination — canonical Inspection use case. |
+| SRS-HW-0010 | Inspection | Yes | Yes | Yes | PASS | Stabiliser concentration (0.3–0.5%) confirmed via material certificate of analysis — Inspection of documentation is appropriate and consistent with HW-0009. |
+| SRS-HW-0011 | Inspection | Yes | Yes | Yes | PASS | Absence of metallic sub-components verified by physical/visual (or X-ray) examination — Inspection appropriate. |
+| SRS-HW-0012 | Inspection | Yes | Yes | Yes | PASS | Absence of chrome/nickel plating verified by material examination/certificate — Inspection appropriate; consistent with peer SRS-SAFE-0021 (§7, also Inspection) and aligned with RM-0026 (CONFIRMED). |
+| SRS-HW-0013 | Inspection | Yes | Yes | Yes | PASS | Component-presence check (3-axis MEMS accelerometer) via BOM/datasheet examination — Inspection appropriate. |
+| SRS-HW-0014 | Test | Yes | Yes | Yes | PASS | ODR ≥50 Hz is a measurable operating characteristic requiring actual output-rate measurement, not just a datasheet check — Test is the correct method here (distinguishing it from the presence-only HW-0013). |
+| SRS-HW-0015 | Inspection | Yes | Yes | Yes | PASS (advisory) | Bundles wake-on-motion presence, FIFO ≥512 B, and DMA access. The presence/architecture clauses are Inspection-appropriate; the FIFO ≥512 B numeric clause is defensible under Inspection as a component-datasheet/spec-sheet conformance check (procurement-level verification) rather than a system-operational measurement. Non-blocking advisory: for strict method/criterion consistency with HW-0014's treatment of a similar numeric hardware capability (ODR, verified by Test), the Drafter or Conflict Resolver may wish to consider whether the FIFO capacity clause should be split out and verified by Test (e.g., burst-fill and confirm no overflow below 512 B) for tighter rigor. Not required — Inspection remains a valid method for this claim as worded. |
+| SRS-HW-0016 | Inspection | Yes | Yes | Yes | PASS | Negative presence check (no GNSS on Mini) via BOM examination — Inspection appropriate. |
+| SRS-HW-0017 | Inspection | Yes | Yes | Yes | PASS | Presence check (GNSS receiver on Max) via BOM examination — Inspection appropriate. |
+| SRS-HW-0018 | Inspection | Yes | Yes | Yes | PASS | Presence check (BLE 5.x radio) via BOM/datasheet examination — Inspection appropriate. |
+| SRS-HW-0019 | Test | Yes | Yes | Yes | PASS | TX power ≥+8 dBm is an operating characteristic measurable with a spectrum analyzer/power meter under defined conditions — Test is correct, distinguishing it from the presence-only HW-0018. No regulatory-method contradiction (RM-0029 concerns RF-exposure *applicability*, not verification-method choice). |
+| SRS-HW-0020 | Inspection | Yes | Yes | Yes | PASS | Cell nominal capacity (≥120 mAh) verified via cell manufacturer datasheet/certificate — Inspection is the standard procurement-conformance method for a rated-capacity spec, distinct from the battery-life *performance* claims (SRS-PERF-0001, Analysis) that depend on it. |
+| SRS-HW-0021 | Inspection | Yes | Yes | Yes | PASS | Same reasoning as HW-0020 for the ≥400 mAh Max cell. |
+| SRS-HW-0022 | Test | Yes | Yes | Yes | PASS | Overcharge/over-discharge/short-circuit/over-temperature protection are functional circuit behaviors that must be exercised under fault conditions to confirm trip action — Test is the correct method, and aligns with RM-0011 (IEC 62133-2:2017+AMD1:2021, CONFIRMED), which itself is a test-based cell/pack safety standard. |
+| SRS-HW-0023 | Test | Yes | Yes | Yes | PASS | UN 38.3 is itself a defined battery test-series (altitude, thermal cycling, vibration, shock, external short-circuit, impact/crush, overcharge, forced discharge) — Test is exactly the mandated approach; strong regulatory alignment with RM-0010 (CONFIRMED). |
+| SRS-HW-0024 | Test | Yes | Yes | Yes | PASS | Alert-trigger behavior at a numeric SoC threshold (≤20%) is directly testable by discharging to the threshold and confirming the alert fires — Test appropriate. |
+| SRS-HW-0025 | Inspection | Yes | Yes | Yes | PASS | Presence/configuration check (2-contact pogo-pin, VBUS/GND, magnetic insert) via physical/visual examination — Inspection appropriate. |
+| SRS-HW-0026 | Test | Yes | Yes | Yes | PASS | ≥30-day storage sufficiency is directly testable by loading a synthetic 30-day classification-summary dataset and confirming no overflow/loss — Test appropriate (Analysis via data-rate×duration calculation would also be defensible, but the declared Test is not inappropriate). |
+| SRS-HW-0027 | Test | Yes | Yes | Yes | PASS | On-device inference capability without cloud connectivity is a functional behavior directly testable by disabling connectivity and confirming classification output — Test appropriate. |
+| SRS-HW-0028 | Inspection | Yes | Yes | Yes | PASS | DMA peripheral access and hardware-root-of-trust presence are architectural/component features confirmed via design documentation/datasheet examination — Inspection appropriate. The *behavioral* secure-boot attestation this anchors is separately verified by Test under SRS-SEC-0005 (§8) — correct split, no duplication of method obligation. |
+
+## Summary
+
+**28/28 requirements: Present, validly typed, appropriate, coherent, and regulatory-aligned. 0 FAIL, 0 FLAG requiring return to Drafter.**
+
+### Method distribution
+- **Test:** 11 (HW-0001, 0002, 0003, 0004, 0014, 0019, 0022, 0023, 0024, 0026, 0027) — all carry measurable, unit-bearing criteria (g, IP-rating test parameters, Hz, dBm, %, days, functional trigger behavior) verified under defined conditions.
+- **Inspection:** 17 (HW-0005, 0006, 0007, 0008, 0009, 0010, 0011, 0012, 0013, 0015, 0016, 0017, 0018, 0020, 0021, 0025, 0028) — all are presence/absence checks, static geometric/dimensional conformance, or material/component datasheet-certificate confirmation. No Analysis or Demonstration used in this section; no invented or compound types.
+
+### Non-blocking advisory (informational only)
+SRS-HW-0015 bundles a numeric FIFO-capacity clause (≥512 bytes) under Inspection rather than Test, which is a legitimate but slightly less rigorous choice than the Test method used for the comparable numeric hardware-capability claim in HW-0014 (ODR ≥50 Hz). This is not a coherence defect — Inspection via component datasheet/spec-sheet conformance is a valid verification path for a procured-component capacity spec — but is noted for optional tightening at the Drafter's or Conflict Resolver's discretion. Does not block §11 approval.
+
+### Regulatory alignment cross-check
+Checked against all Regulatory Map entries touching §11 hardware components (RM-0010 UN 38.3, RM-0011 IEC 62133-2, RM-0026 REACH/RoHS/Prop 65, RM-0028 IEC 60529/60068 series). All are test-or-inspection-based standards themselves; the corresponding SRS-HW verification methods (Test for UN 38.3/IEC 62133-2/IEC 60529 items; Inspection for REACH/RoHS material items) are consistent with each standard's own verification approach. No contradiction found.
+
+**Disposition: PASS — no return to Drafter. §11 clears the Verification-Method Validator's sequential pass.**
+
+---
+
+## V-METHOD RE-VERIFY — SRS-HW-0008 (post-VM change Inspection→Test, CR-0017/XSC-0008)
+
+**Trigger:** CR-0017 (resolving XSC-0008) changed SRS-HW-0008's Verification Method from **Inspection → Test**, aligning with SRS-INT-0036 (§10), whose VM was independently corrected for the same reason. Requirement text ("The device-facing charging socket **shall** be geometrically self-draining."), Rationale, Source, Priority (MEDIUM), Stability (STABLE), and XR (SRS-INT-0036) are unchanged. Feasibility Checker already re-scored D1–D7 PASS in FEASIBILITY_POST (`feasibility/feasibility-11.md`), explicitly deferring method-typing appropriateness to this pass. This re-verify supersedes the original HW-0008 row in the table above (Inspection, PASS) for the current, post-CR-0017 state of the requirement.
+
+**Checks applied:** (1) Presence · (2) Valid type · (3) Appropriateness to the requirement's nature · (4) Method/criterion coherence · (5) Regulatory alignment
+
+| SRS-HW-ID | Method | Present? | ValidType? | Appropriate? | Verdict | Reason |
+|---|---|---|---|---|---|---|
+| SRS-HW-0008 | Test | Yes | Yes | Yes (category) / **No (criterion)** | **FLAG** | (1) Presence: `VM: Test` is populated in §11 (line 38) — PASS. (2) Valid type: "Test" is one of the four canonical types, not invented/compound — PASS. (3) Appropriateness of category: self-draining is a **functional/dynamic** claim (water must actually clear the socket under gravity/geometry after exposure), not a static geometric feature confirmable by visual/dimensional review alone — Test is the *more* appropriate category than the original Inspection, consistent with the parallel correction already applied to SRS-INT-0036 and consistent with this section's own pattern of using Test for dynamic/operational claims (cf. HW-0003/HW-0004 IP67, HW-0022 fault-trip behavior) versus Inspection for static geometry/presence/material claims (cf. HW-0006/HW-0007 wall-thickness/no-penetration). No Regulatory Map entry mandates a specific method for this claim — RM-0028 (IEC 60529/60068 series, CONFIRMED) is itself a test-based ingress/environmental standard and is satisfied by either method choice; no contradiction. (4) **Method/criterion coherence — FAIL on this sub-check:** the requirement statement as worded ("shall be geometrically self-draining") and its PRD source (§10.5 "self-draining socket"; §10.1.3.5 "self-draining socket") carry **no measurable, unit-bearing acceptance criterion** — no water volume, tilt/orientation angle, exposure duration, or maximum residual-water/drain-time threshold. A Test verification method requires a definable pass/fail measurement under stated conditions; as currently worded there is nothing to measure against. This gap was masked under the prior Inspection method (a design/geometry examination can plausibly confirm "a drain path exists" without a quantified threshold) but is exposed now that Test is declared — a test engineer cannot write an executable test procedure from this statement alone. |
+
+**Verdict: FLAG — SRS-HW-0008.** Not a FAIL: presence and valid-type both pass, and the Test *category* is the correct direction (an improvement over Inspection for this functional claim, consistent with SRS-INT-0036's identical correction). The defect is narrower: **method/criterion incoherence** — Test is the right method but the requirement lacks the quantified acceptance criterion needed to execute it.
+
+**Recommended resolution (for Conductor routing):** Do NOT revert the method to Inspection — Test remains the appropriate category. Recommend returning to the Requirements Drafter to add a quantified, testable criterion to the SRS-HW-0008 statement, e.g. (illustrative — Drafter/SME to set actual bounds; PRD §10.5/§10.1.3.5 do not currently specify numeric drainage bounds so this may also warrant an Assumption or a PRD-clarification loop): "...shall drain to ≤[X] mL residual water within [Y] seconds following exposure to [Z] mL poured water / [tilt angle]° orientation for [duration]." Until such a criterion is added, the same coherence gap also exists in SRS-INT-0036 (§10) — flagging for Conductor awareness in case a single Drafter pass should address both linked requirements together rather than only HW-0008 in isolation.
+
+**Disposition:** §11 re-verify of SRS-HW-0008 complete. This single-requirement FLAG is reported to the Conductor for a routing decision (return to Drafter for criterion addition vs. accept as-is with an advisory). Does not reopen or alter the PASS verdicts already recorded for the other 27 §11 requirements above.

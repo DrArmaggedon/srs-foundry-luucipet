@@ -1,0 +1,98 @@
+# 🔄 Migrated from legacy SRS Foundry format (old session: [S-luuci01]) by SRS Foundry Migrator. Date: 2026-07-20.
+# [S-luucipet] RTM — Part A (§1–§4)
+
+*Combined authoritative row count = 283 (Part A: 89 · Part B: 194).*
+
+| Req-ID | Title | Source Tags | Section | Status | Verification Method |
+|---|---|---|---|---|---|
+| SRS-REG-0001 | Prohibit medical-classification claims | [PRD §13.6] | §1 | APPROVED | Inspection |
+| SRS-REG-0002 | Require regulatory classification review | [PRD §13.6] | §1 | APPROVED | Analysis |
+| SRS-OPER-0001 | Require ≥1 Charging-tier base station | [PRD §4.2],[PRD §4.5] | §2 | APPROVED | Inspection |
+| SRS-OPER-0002 | Limit base stations to ≤8 | [PRD §4.2],[PRD §4.5] | §2 | APPROVED | Test |
+| SRS-OPER-0003 | Persist species assignment across resets | [PRD §4.5],[PRD §7.2] | §2 | APPROVED | Test |
+| SRS-OPER-0004 | Prohibit owner config of GNSS power gate | [PRD §4.5] | §2 | APPROVED | Inspection |
+| SRS-OPER-0005 | Bound in-box CCF fitment (≥80%) | [PRD §14.2] | §2 | APPROVED | Analysis |
+| SRS-OPER-0006 | Default to Standard CCF in-box | [PRD §4.1],[PRD §14.2] | §2 | APPROVED | Inspection |
+| SRS-OPER-0007 | Degraded-mode below Wi-Fi bound | [ASSUMPTION: A-0009] | §2 | APPROVED | Test |
+| SRS-OPER-0008 | Mobile App post-breakaway alert | [EXTERNAL: Mobile App team] | §2 | APPROVED | Analysis-ext |
+| SRS-OPER-0009 | Mobile App species re-onboarding | [EXTERNAL: Mobile App team] | §2 | APPROVED | Analysis-ext |
+| SRS-OPER-0010 | Mobile App CCF fitment guidance | [EXTERNAL: Mobile App team] | §2 | APPROVED | Analysis-ext |
+| SRS-OPER-0011 | Cloud-side home/away state machine | [EXTERNAL: IoT Cloud backend team] | §2 | APPROVED | Analysis-ext |
+| SRS-COMP-0001 | Collar-agnostic base station FW | [PRD §4.3],[PRD §4.5] | §2 | APPROVED | Test |
+| SRS-COMP-0002 | Universal CCF-to-device compatibility | [PRD §4.1],[PRD §4.3] | §2 | APPROVED | Test |
+| SRS-COMP-0003 | Equivalent classification outputs across variants | [PRD §4.3] | §2 | APPROVED | Analysis |
+| SRS-COMP-0004 | Interoperable BLE protocol across variants | [PRD §4.3] | §2 | APPROVED | Test |
+| SRS-FUNC-0001 | Detect + persist breakaway ≤5 s | [PRD §10.1.3.6],[A-0015],[A-0018] | §2 | APPROVED | Test |
+| SRS-FUNC-0002 | Transport breakaway event to cloud | [PRD §10.1.3.6],[PRD §8.5],[A-0015],[A-0018] | §2 | APPROVED | Test |
+| SRS-FUNC-0003 | Preserve + forward breakaway event | [PRD §8.4],[PRD §10.1.3.6],[A-0018] | §2 | APPROVED | Test |
+| SRS-FUNC-0004 | Breakaway FP ≤0.1%/wear-day | [ASSUMPTION: A-0018] | §2 | APPROVED | Test |
+| SRS-FUNC-0005 | Breakaway detection ≥99% | [ASSUMPTION: A-0018],[PRD §10.1.3.7] | §2 | APPROVED | Test |
+| SRS-FUNC-0006 | Wellness Mode as default | [PRD §7.1] | §3 | APPROVED | Demonstration |
+| SRS-FUNC-0007 | Insight Mode on demand | [PRD §7.1] | §3 | APPROVED | Demonstration |
+| SRS-FUNC-0008 | Insight Mode 50 Hz continuous | [PRD §7.1] | §3 | APPROVED | Test |
+| SRS-FUNC-0009 | Insight Mode auto-revert | [PRD §7.3] | §3 | APPROVED | Test |
+| SRS-FUNC-0010 | Wellness 15-min confirmation burst | [PRD §7.3] | §3 | APPROVED | Test |
+| SRS-FUNC-0011 | Wellness idle ≤4 µA | [PRD §7.3] | §3 | APPROVED | Test |
+| SRS-FUNC-0012 | Longevity no samplerate reduction | [PRD §7.10] | §3 | APPROVED | Test |
+| SRS-FUNC-0013 | Longevity no accuracy reduction | [PRD §7.10] | §3 | APPROVED | Test |
+| SRS-FUNC-0014 | Accel ODR ≥50 Hz | [PRD §7.2] | §3 | APPROVED | Test |
+| SRS-FUNC-0015 | No aux sensors Tier-1 | [PRD §7.2] | §3 | APPROVED | Inspection |
+| SRS-FUNC-0016 | Unified pipeline across tiers | [PRD §7.2] | §3 | APPROVED | Inspection |
+| SRS-FUNC-0017 | Species thresholds at onboarding | [PRD §7.2] | §3 | APPROVED | Test |
+| SRS-FUNC-0018 | Tier-1 accuracy ≥85% | [PRD §7.4] | §3 | APPROVED | Test |
+| SRS-FUNC-0019 | Tier-1 FP ≤5% | [PRD §7.4] | §3 | APPROVED | Test |
+| SRS-FUNC-0020 | Tier-2 accuracy ≥80% | [PRD §7.4] | §3 | APPROVED | Test |
+| SRS-FUNC-0021 | Tier-2 FP ≤10% | [PRD §7.4] | §3 | APPROVED | Test |
+| SRS-FUNC-0022 | Record contains behavior label | [PRD §7.5] | §3 | APPROVED | Inspection |
+| SRS-FUNC-0023 | Record confidence 0.0–1.0 | [PRD §7.5] | §3 | APPROVED | Test |
+| SRS-FUNC-0024 | Timestamp UTC ≤1 s | [PRD §7.5] | §3 | APPROVED | Test |
+| SRS-FUNC-0025 | Record GNSS fix on Max | [PRD §7.5] | §3 | APPROVED | Inspection |
+| SRS-FUNC-0026 | Local retention ≥30 d | [PRD §7.5] | §3 | APPROVED | Test |
+| SRS-FUNC-0027 | No discard on connectivity loss | [PRD §7.5] | §3 | APPROVED | Test |
+| SRS-FUNC-0028 | Classification independent of BLE | [PRD §7.6] | §3 | APPROVED | Demonstration |
+| SRS-FUNC-0029 | Forward without corruption | [PRD §7.6] | §3 | APPROVED | Test |
+| SRS-FUNC-0030 | Forward without sequence loss | [PRD §7.6] | §3 | APPROVED | Test |
+| SRS-FUNC-0031 | On-device normalization | [PRD §7.7] | §3 | APPROVED | Inspection |
+| SRS-FUNC-0032 | Raw accel not leave collar | [PRD §7.7] | §3 | APPROVED | Test |
+| SRS-FUNC-0033 | No cloud round-trip for classification | [PRD §7.7] | §3 | APPROVED | Demonstration |
+| SRS-FUNC-0034 | Tier-2 via OTA | [PRD §7.9] | §3 | APPROVED | Demonstration |
+| SRS-FUNC-0035 | Tier-2 no HW mod | [PRD §7.9] | §3 | APPROVED | Demonstration |
+| SRS-FUNC-0036 | Apply Scratching threshold | [PRD §7.8] | §3 | APPROVED | Test |
+| SRS-FUNC-0037 | Scratching FW-default threshold | [PRD §7.8] | §3 | APPROVED | Inspection |
+| SRS-FUNC-0038 | Apply Shaking threshold | [PRD §7.8] | §3 | APPROVED | Test |
+| SRS-FUNC-0039 | Shaking FW-default threshold | [PRD §7.8] | §3 | APPROVED | Inspection |
+| SRS-FUNC-0040 | Thresholds persist across OTA | [PRD §7.8] | §3 | APPROVED | Test |
+| SRS-FUNC-0041 | App Scratching threshold UI | [EXTERNAL: Mobile App team] | §3 | APPROVED | Inspection-ext |
+| SRS-FUNC-0042 | App Shaking threshold UI | [EXTERNAL: Mobile App team] | §3 | APPROVED | Inspection-ext |
+| SRS-CONN-0001 | BLE Collar peripheral | [PRD §6.3] | §4 | APPROVED | Inspection |
+| SRS-CONN-0002 | BLE Base central | [PRD §6.3] | §4 | APPROVED | Inspection |
+| SRS-CONN-0003 | QR OOB pairing | [PRD §6.3] | §4 | APPROVED | Demonstration |
+| SRS-CONN-0004 | Default adv 60 s | [PRD §6.3] | §4 | APPROVED | Test |
+| SRS-CONN-0005 | Adv range 1–180 s | [PRD §6.3] | §4 | APPROVED | Test |
+| SRS-CONN-0006 | BLE range ≥9 m | [PRD §6.3] | §4 | APPROVED | Test |
+| SRS-CONN-0007 | TX ≥+8 dBm | [PRD §6.3] | §4 | APPROVED | Test |
+| SRS-CONN-0008 | BLE addr randomization | [PRD §6.3] | §4 | APPROVED | Test |
+| SRS-CONN-0009 | Secured BLE link (§8) | [PRD §6.3] | §4 | APPROVED | Inspection |
+| SRS-CONN-0010 | Auto-reconnect on range re-entry | [PRD §6.4],[PRD §8.5] | §4 | APPROVED | Test |
+| SRS-CONN-0011 | Record forwarding on BLE contact | [PRD §8],[PRD §6.4] | §4 | APPROVED | Test |
+| SRS-CONN-0012 | Best-effort event-triggered transport | [PRD §8.5] | §4 | APPROVED | Inspection |
+| SRS-CONN-0013 | Sync resumption after reconnection | [PRD §8],[PRD §8.5] | §4 | APPROVED | Test |
+| SRS-CONN-0014 | Base upload records to cloud | [PRD §8],[PRD §6.5] | §4 | APPROVED | Test |
+| SRS-CONN-0015 | Base buffer on upload-path unavailable | [PRD §8.5] | §4 | APPROVED | Test |
+| SRS-CONN-0016 | Upload buffered on path restoration | [PRD §8.5] | §4 | APPROVED | Test |
+| SRS-CONN-0017 | No discard pending upload | [PRD §8.5] | §4 | APPROVED | Test |
+| SRS-CONN-0018 | Cloud accept and ack uploads | [EXTERNAL: IoT Cloud backend team] | §4 | APPROVED | Inspection-ext |
+| SRS-CONN-0019 | Forward to any in-range paired base | [PRD §4.2],[PRD §8] | §4 | APPROVED | Test |
+| SRS-CONN-0020 | Forward to first available base only | [PRD §4.2],[PRD §8] | §4 | APPROVED | Test |
+| SRS-CONN-0021 | Cloud-side dedup of multi-base uploads | [EXTERNAL: IoT Cloud backend team] | §4 | APPROVED | Inspection-ext |
+| SRS-CONN-0022 | Device-side Insight activation on command | [PRD §7.1],[PRD §6.4] | §4 | APPROVED | Test |
+| SRS-CONN-0023 | App Insight activation command | [EXTERNAL: Mobile App team] | §4 | APPROVED | Inspection-ext |
+| SRS-CONN-0024 | Location-tagged records via standard path | [PRD §7.5],[PRD §8] | §4 | APPROVED | Test |
+| SRS-CONN-0025 | Sync last GNSS fix during home power-gate | [PRD §7.5],[PRD §6.3] | §4 | APPROVED | Test |
+| SRS-CONN-0026 | No record loss any connectivity-loss | [PRD §8.5] | §4 | APPROVED | Analysis |
+| SRS-CONN-0027 | Continue classification during BLE loss | [PRD §7.6],[PRD §8.5] | §4 | APPROVED | Demonstration |
+| SRS-CONN-0028 | Degraded-mode entry below Wi-Fi bound | [ASSUMPTION: A-0009] | §4 | APPROVED | Test |
+| SRS-CONN-0029 | Degraded-mode exit on Wi-Fi restoration | [ASSUMPTION: A-0009] | §4 | APPROVED | Test |
+| SRS-CONN-0030 | Base upload retry on transient failure | [PRD §8.5] | §4 | APPROVED | Demonstration |
+
+*RTM Part A Row Count: 89 (§1: 2 · §2: 22 · §3: 37 · §4: 28). Part B (§5–§7) = 50 rows in separate doc.*
