@@ -1,13 +1,17 @@
-ASSEMBLY CORRECTED v1.1
-Timestamp: 2026-07-22T14:15:53Z
+ASSEMBLY CORRECTED v1.2
+Timestamp: 2026-07-22T14:22:26Z
 Artifact: SRS-LUUCIPET-FINAL.md
-Size: 295.5 KB
+Size: 294.0 KB
 Sections: 18
 Standards: IEEE 830 / ISO/IEC/IEEE 29148
-Corrections Applied:
-- Title: "Software" → "System Requirements Specification"
-- Removed empty table row in document control
+v1.2 Changes (Multi-Predicate Splits):
+- Split COMP-0003 → COMP-0003 (equiv outputs) + COMP-0031 (common protocol)
+- Split FUNC-0003 → FUNC-0003 (data survival) + FUNC-0062 (transmission)
+- Split HW-0015 → HW-0015 (wake-on-motion) + HW-0029 (FIFO buffer)
+- Split INT-0055 → INT-0055 (config downlink) + INT-0061 (OTA image transport)
+- Removed MULTI-PREDICATE markers from 5 borderline requirements (single-predicate with clarifying lists)
+v1.1 Changes (prior):
+- Title: System Requirements Specification
 - Normalized 52 inline-VM/XR requirements to proper 7-row format
-- Fixed heading hierarchy skip (RTM Part B)
-- Applied design-free rewrites to 3 requirements
-- Annotated 9 multi-predicate requirements for v1.2 split
+- Fixed heading hierarchy, empty table row
+- Design-free rewrites (INT-0031, INT-0039, INT-0052)
