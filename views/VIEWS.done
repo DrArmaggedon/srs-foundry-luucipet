@@ -1,0 +1,19 @@
+VIEWS COMPLETE
+Timestamp: 2026-07-22T10:39:34Z
+Source: SRS-LUUCIPET-001, Revision 1.0, July 2026
+Views Generated: 10
+Total Size: 359.8 KB
+
+Files:
+- view-executive-summary.md
+- view-firmware.md
+- view-handoff-iot-cloud-backend-team.md
+- view-handoff-mobile-app-team.md
+- view-hardware.md
+- view-interface.md
+- view-operations.md
+- view-qa-verification.md
+- view-regulatory.md
+- view-safety.md
+
+All views are pure derivations from the Master SRS with provenance banners.
