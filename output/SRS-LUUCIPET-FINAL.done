@@ -1,10 +1,13 @@
-ASSEMBLY COMPLETE (corrected)
-Timestamp: 2026-07-22T08:45:00Z
+ASSEMBLY CORRECTED v1.1
+Timestamp: 2026-07-22T14:15:53Z
 Artifact: SRS-LUUCIPET-FINAL.md
-Size: 292 KB
-Anchored Requirements: 364
-Requirement Tables: 393
+Size: 295.5 KB
 Sections: 18
-Traceability Rows: 369
 Standards: IEEE 830 / ISO/IEC/IEEE 29148
-Issues Fixed: duplicate CONN-0030 removed, all subsections populated, consistent two-column table format throughout, proper provenance scrubbing
+Corrections Applied:
+- Title: "Software" → "System Requirements Specification"
+- Removed empty table row in document control
+- Normalized 52 inline-VM/XR requirements to proper 7-row format
+- Fixed heading hierarchy skip (RTM Part B)
+- Applied design-free rewrites to 3 requirements
+- Annotated 9 multi-predicate requirements for v1.2 split
