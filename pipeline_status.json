@@ -52,8 +52,11 @@
       ]
     },
     "ASSEMBLY": {
-      "status": "PENDING",
-      "artifacts": []
+      "status": "PASS",
+      "artifacts": [
+        "SRS-LUUCIPET-FINAL.md",
+        "SRS-LUUCIPET-FINAL.done"
+      ]
     }
   },
   "summary": {
