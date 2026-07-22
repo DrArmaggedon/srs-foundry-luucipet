@@ -1,7 +1,7 @@
 {
   "project": "Luucipet",
   "session_id": "S-luucipet",
-  "last_updated": "2026-07-21T13:30:00Z",
+  "last_updated": "2026-07-21T15:45:00Z",
   "gates": {
     "PRD_PROCESSING": {
       "status": "PASS",
@@ -55,9 +55,7 @@
       "status": "PASS",
       "artifacts": [
         "SRS-LUUCIPET-FINAL.md",
-        "SRS-LUUCIPET-FINAL.done",
-        "SRS-LUUCIPET-PH1-002.md",
-        "SRS-LUUCIPET-PH1-002.done"
+        "SRS-LUUCIPET-FINAL.done"
       ]
     }
   },
