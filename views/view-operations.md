@@ -1,33 +1,15 @@
-# SRS-LUUCIPET — Derived View: Operations & Support
-
 > **DERIVED VIEW** — Filtered excerpt of Master SRS
 > **Source:** SRS-LUUCIPET-001, Revision 1.0, July 2026
 > **Master SRS:** `output/SRS-LUUCIPET-FINAL.md`
-> **View Generated:** 2026-07-22T10:30:00Z
-> **Audience:** Operations Engineering, Support Engineering, Reliability Engineering, QA, Product Management
-> ⚠️ For full context, always refer to the Master SRS.
+> **View Generated:** 2026-07-22T21:00:00Z
+⚠️ For full context, always refer to the Master SRS.
 
 ---
 
-## 1.1 Purpose
-
-This System Requirements Specification (SRS) defines the requirements for the LUUCIPet Wellness Monitor Phase 1 product family — the Mini and Max collar devices, the Base Station family (Charging and Relay tiers), the Collar Connection Fixture (CCF) accessory family, and the Portable Travel Charging Cradle. It translates the LUUCIPet Wellness Monitor PRD v1.3.3 into formally structured, verifiable requirements conforming to IEEE 830 / ISO/IEC/IEEE 29148, to support design, verification, and regulatory conformance.
-
-## 1.2 Scope
-
-**In scope:**  Mini & Max collar HW+FW; Base Station (Charging & Relay) HW+FW; the device-enforced BLE/base-to-cloud protocol (device-management layer interface); the CCF accessory family (widths S/M/L, collar-types -RC/-MG); the Portable Travel Charging Cradle; the LUUCI IoT Cloud Device-Management layer insofar as it defines the collar/base-station-facing interface contract.
-**Out of scope (PRD §6.1, §14.1):**  GPS-M variant + cellular (Phase 2, separate PRD); LUUCI Mobile App; IoT Cloud data storage/analytics backend; cloud-side home/away state machine; device-app ICD.
-
-## 1.3 Product Perspective
-
-Collar-mounted behavioral wellness system. Each collar communicates with household Base Stations over BLE; Base Stations relay behavioral data, geo-fencing sighting reports, and OTA firmware to/from the LUUCI IoT Cloud Device-Management layer over Wi-Fi. The collar attaches to the pet's own collar via the CCF, which provides structural retention (Zone 1) and species-appropriate strangulation-prevention breakaway (Zone 2 Fuse Tab). The device engages the CCF through a Twist-Lock interface for charging removal.
-
----
 
 ## 13. Reliability Availability
 
 # §13 — Reliability & Availability Requirements
-
 
 ## 13.0 Scope Note
 
@@ -44,8 +26,7 @@ This section specifies the dependability, availability, and long-run success-rat
 | **SRS-RELI-0001** | **IP67 Rating Retention Over Full Service Lifetime** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The collar device, standalone and unmated from any CCF, **shall** retain its IP67 ingress-protection rating (SRS-HW-0003) for no less than 2 years of expected service life. |
-| **Rationale**    | PRD §12.2 states the qualitative criterion "IP67 full lifetime (device standalone)" but does not itself state a numeric service-lifetime duration against which "full lifetime" can be tested. The Product Context Profile records a user-confirmed expected service lifetime of ~2–3 years, with a 2-year floor to be used wherever a single testable figure is required; that floor is applied here as the qualification duration. This requirement is the temporal-endurance complement to the device-standalone IP67 rating already established by SRS-HW-0003 and does not restate the rating itself. \| Verification Method: Analysis \| Cross-References: SRS-HW-0003, SRS-ENV-0005, SRS-ENV-0006<br><br>## 13.2 Collar Device Availability |
-| **Priority**     | Critical |
+| **Rationale**    | PRD §12.2 states the qualitative criterion "IP67 full lifetime (device standalone)" but does not itself state a numeric service-lifetime duration against which "full lifetime" can be tested. The Product Context Profile records a user-confirmed expected service lifetime of ~2–3 years, with a 2-year floor to be used wherever a single testable figure is required; that floor is applied here as the qualification duration. This requirement is the temporal-endurance complement to the device-standalone IP67 rating already established by SRS-HW-0003 and does not restate the rating itself. \| Verification Method: Analysis \| Cross-References: SRS-HW-0003, SRS-ENV-0005, SRS-ENV-0006<br><br>## 13.2 Collar Device Availability | **Priority**     | Critical |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §12.2 |
@@ -55,8 +36,7 @@ This section specifies the dependability, availability, and long-run success-rat
 | **SRS-RELI-0002** | **Collar Device Operational Availability** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The collar device **shall** achieve an operational availability of no less than 99%, excluding any time during which the device is docked and charging. |
-| **Rationale**    | PRD §12.2 states "collar operational ≥99% (excl. charging)" as a direct numeric floor, but — unlike the base station uptime criterion in the same clause, which specifies a 90-day measurement window — the PRD does not state the observation-window length over which collar availability is to be measured. Flagged per the numeric-vagueness gate rather than inventing a window; the 99% floor and the charging exclusion are PRD-stated and are issued as-is. Verification Method corrected from Analysis to Test per V-Method review: this is a directly observable field/DVT proportion metric (uptime vs. total non-charging elapsed time), matching the Test pattern this SRS already applies to equivalent rate/proportion criteria (SRS-FUNC-0018–0021, SRS-FUNC-0001); no MTBF-style modeling basis is stated that would justify Analysis. \| Verification Method: Test \| Cross-References: SRS-HW-0025, SRS-INT-0031, SRS-INT-0032<br><br>## 13.3 Base Station Availability |
-| **Priority**     | High |
+| **Rationale**    | PRD §12.2 states "collar operational ≥99% (excl. charging)" as a direct numeric floor, but — unlike the base station uptime criterion in the same clause, which specifies a 90-day measurement window — the PRD does not state the observation-window length over which collar availability is to be measured. Flagged per the numeric-vagueness gate rather than inventing a window; the 99% floor and the charging exclusion are PRD-stated and are issued as-is. Verification Method corrected from Analysis to Test per V-Method review: this is a directly observable field/DVT proportion metric (uptime vs. total non-charging elapsed time), matching the Test pattern this SRS already applies to equivalent rate/proportion criteria (SRS-FUNC-0018–0021, SRS-FUNC-0001); no MTBF-style modeling basis is stated that would justify Analysis. \| Verification Method: Test \| Cross-References: SRS-HW-0025, SRS-INT-0031, SRS-INT-0032<br><br>## 13.3 Base Station Availability | **Priority**     | High |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §12.2 |
@@ -66,8 +46,7 @@ This section specifies the dependability, availability, and long-run success-rat
 | **SRS-RELI-0003** | **Base Station Uptime** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The base station **shall** achieve an uptime of no less than 99.5%, measured over any rolling 90-day window. |
-| **Rationale**    | PRD §12.2 states "base ≥99.5% uptime over 90-day window" as a direct, fully-bounded numeric criterion; the base station's continuous, mains-powered, no-sleep operating profile (PRD §11.7) makes a rolling-window uptime metric directly measurable in the field. Verification Method corrected from Analysis to Test per V-Method review: the criterion is fully bounded (explicit 90-day window) and directly observable via continuous-operation monitoring against the threshold — a practical DVT/pilot burn-in test, not a modeling exercise. \| Verification Method: Test \| Cross-References: —<br><br>## 13.4 OTA Update Success Rate |
-| **Priority**     | High |
+| **Rationale**    | PRD §12.2 states "base ≥99.5% uptime over 90-day window" as a direct, fully-bounded numeric criterion; the base station's continuous, mains-powered, no-sleep operating profile (PRD §11.7) makes a rolling-window uptime metric directly measurable in the field. Verification Method corrected from Analysis to Test per V-Method review: the criterion is fully bounded (explicit 90-day window) and directly observable via continuous-operation monitoring against the threshold — a practical DVT/pilot burn-in test, not a modeling exercise. \| Verification Method: Test \| Cross-References: —<br><br>## 13.4 OTA Update Success Rate | **Priority**     | High |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §12.2 |
@@ -77,14 +56,11 @@ This section specifies the dependability, availability, and long-run success-rat
 | **SRS-RELI-0004** | **OTA Update Success Rate** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The system **shall** achieve an OTA firmware update success rate of no less than 99%, measured as the proportion of initiated OTA installation attempts — on either a collar-mounted device or a base station — that complete successfully without invoking the dual-bank auto-revert defined in SRS-FUNC-0056. |
-| **Rationale**    | PRD §12.2 states "OTA success ≥99%" as a direct numeric floor on the aggregate reliability of the OTA mechanism already specified functionally in §5; "success" is defined operationally against the existing auto-revert criterion (SRS-FUNC-0056) rather than inventing a separate definition. Verification Method corrected from Analysis to Test per V-Method review: this is a repeated-trial pass/fail statistic (run N install attempts, including fault-injected trials per SRS-FUNC-0057, and compute the pass proportion against the 99% floor), matching the Test pattern this SRS already applies to equivalent proportion-based criteria (SRS-FUNC-0001, SRS-FUNC-0018–0021). \| Verification Method: Test \| Cross-References: SRS-FUNC-0055, SRS-FUNC-0056, SRS-FUNC-0057<br><br>--- |
-| **Priority**     | High |
+| **Rationale**    | PRD §12.2 states "OTA success ≥99%" as a direct numeric floor on the aggregate reliability of the OTA mechanism already specified functionally in §5; "success" is defined operationally against the existing auto-revert criterion (SRS-FUNC-0056) rather than inventing a separate definition. Verification Method corrected from Analysis to Test per V-Method review: this is a repeated-trial pass/fail statistic (run N install attempts, including fault-injected trials per SRS-FUNC-0057, and compute the pass proportion against the 99% floor), matching the Test pattern this SRS already applies to equivalent proportion-based criteria (SRS-FUNC-0001, SRS-FUNC-0018–0021). \| Verification Method: Test \| Cross-References: SRS-FUNC-0055, SRS-FUNC-0056, SRS-FUNC-0057<br><br>--- | **Priority**     | High |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §12.2 |
 
-
----
 ## 14. Usability
 
 ## §14 Usability Requirements
@@ -212,8 +188,8 @@ This section specifies the dependability, availability, and long-run success-rat
 | EXTERNAL attribution | Mobile App team                                       |
 | ID range consumed    | SRS-UX-0001 – SRS-UX-0029                             |
 
----
 ## 15. Operational Requirements
+
 
 
 ## 15.0 Scope Note
@@ -234,8 +210,7 @@ This section specifies operational behavior of the deployed system that is not a
 | **SRS-OPER-0012** | **Base Station Continuous Operational Posture** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The base station **shall** remain in a continuously powered, non-sleeping operational state for as long as AC power is supplied, maintaining active BLE scanning and Wi-Fi uplink capability at all times. |
-| **Rationale**    | The base station is a mains-powered, always-available relay; PRD §11.7 states continuous operation with no sleep state and BLE scan/uplink always on, distinguishing its operational posture from the battery-powered, power-optimized collar devices. This continuous posture is also the precondition assumed by the base-station uptime criterion (SRS-RELI-0003) and by the household geo-fence mesh's ability to detect collar sightings without a scheduling gap. \| Verification Method: Demonstration \| Cross-References: SRS-RELI-0003 |
-| **Priority**     | High |
+| **Rationale**    | The base station is a mains-powered, always-available relay; PRD §11.7 states continuous operation with no sleep state and BLE scan/uplink always on, distinguishing its operational posture from the battery-powered, power-optimized collar devices. This continuous posture is also the precondition assumed by the base-station uptime criterion (SRS-RELI-0003) and by the household geo-fence mesh's ability to detect collar sightings without a scheduling gap. \| Verification Method: Demonstration \| Cross-References: SRS-RELI-0003 | **Priority**     | High |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §11.7 |
@@ -245,8 +220,7 @@ This section specifies operational behavior of the deployed system that is not a
 | **SRS-OPER-0013** | **AC Power Adapter Inclusion** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The base station **shall** be supplied with an AC-to-USB-C power adapter as an included accessory. |
-| **Rationale**    | PRD §11.7 specifies USB-C power with the adapter included, ensuring the base station is immediately operable out of box without requiring the owner to source a separate power adapter. \| Verification Method: Inspection \| Cross-References: none<br><br>## 15.2 Base Station Status Indicators |
-| **Priority**     | Medium |
+| **Rationale**    | PRD §11.7 specifies USB-C power with the adapter included, ensuring the base station is immediately operable out of box without requiring the owner to source a separate power adapter. \| Verification Method: Inspection \| Cross-References: none<br><br>## 15.2 Base Station Status Indicators | **Priority**     | Medium |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §11.7 |
@@ -256,8 +230,7 @@ This section specifies operational behavior of the deployed system that is not a
 | **SRS-OPER-0014** | **Charging-Tier Base Station LED Inventory** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The Base Station (Charging) tier **shall** provide exactly 3 status LEDs, indicating at minimum: AC power presence, device-charging activity, and cloud-connectivity status. |
-| **Rationale**    | PRD §4.2/§11.6 specify a 3-LED inventory (power/charging/cloud) for the Charging tier, distinct from the Relay tier's 2-LED inventory (SRS-OPER-0015) because the Relay tier has no charging cradle to indicate. This is a hardware-inventory requirement; the LED *behavior* (indication patterns) for each state is specified by §14 Usability (SRS-UX-0016). \| Verification Method: Inspection \| Cross-References: SRS-OPER-0015, SRS-UX-0016 |
-| **Priority**     | High |
+| **Rationale**    | PRD §4.2/§11.6 specify a 3-LED inventory (power/charging/cloud) for the Charging tier, distinct from the Relay tier's 2-LED inventory (SRS-OPER-0015) because the Relay tier has no charging cradle to indicate. This is a hardware-inventory requirement; the LED *behavior* (indication patterns) for each state is specified by §14 Usability (SRS-UX-0016). \| Verification Method: Inspection \| Cross-References: SRS-OPER-0015, SRS-UX-0016 | **Priority**     | High |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §11.6 |
@@ -267,8 +240,7 @@ This section specifies operational behavior of the deployed system that is not a
 | **SRS-OPER-0015** | **Relay-Tier Base Station LED Inventory** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The Base Station (Relay) tier **shall** provide exactly 2 status LEDs, indicating at minimum: AC power presence and cloud-connectivity status. |
-| **Rationale**    | The Relay tier omits the charging-activity LED present on the Charging tier (SRS-OPER-0014) because it has no charging cradle to report on, consistent with PRD §4.2's description of the Relay tier as identical to the Charging tier minus the charging cradle. \| Verification Method: Inspection \| Cross-References: SRS-OPER-0014, SRS-UX-0016<br><br>## 15.3 Household Geo-Fence Mesh Participation |
-| **Priority**     | High |
+| **Rationale**    | The Relay tier omits the charging-activity LED present on the Charging tier (SRS-OPER-0014) because it has no charging cradle to report on, consistent with PRD §4.2's description of the Relay tier as identical to the Charging tier minus the charging cradle. \| Verification Method: Inspection \| Cross-References: SRS-OPER-0014, SRS-UX-0016<br><br>## 15.3 Household Geo-Fence Mesh Participation | **Priority**     | High |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §11.6 |
@@ -278,8 +250,7 @@ This section specifies operational behavior of the deployed system that is not a
 | **SRS-OPER-0016** | **Multi-Base Household Geo-Fence Mesh Participation** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | Every base station in a household deployment **shall** participate in a shared geo-fence mesh by independently reporting BLE sighting reports for every collar device within its range. |
-| **Rationale**    | PRD §5.3/§4.2 describe up to 8 base stations per household (≥1 Charging) collectively forming a geo-fence mesh; each base station's independent sighting-report contribution (payload structure per SRS-INT-0054) is the mesh's data basis, distinct from the collar-side forwarding-path requirements already owned by §4 (SRS-CONN-0019/0020). \| Verification Method: Demonstration \| Cross-References: SRS-INT-0054, SRS-CONN-0019<br><br>## 15.4 Device-Local Home/Away Determination |
-| **Priority**     | High |
+| **Rationale**    | PRD §5.3/§4.2 describe up to 8 base stations per household (≥1 Charging) collectively forming a geo-fence mesh; each base station's independent sighting-report contribution (payload structure per SRS-INT-0054) is the mesh's data basis, distinct from the collar-side forwarding-path requirements already owned by §4 (SRS-CONN-0019/0020). \| Verification Method: Demonstration \| Cross-References: SRS-INT-0054, SRS-CONN-0019<br><br>## 15.4 Device-Local Home/Away Determination | **Priority**     | High |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §4.2 |
@@ -289,8 +260,7 @@ This section specifies operational behavior of the deployed system that is not a
 | **SRS-OPER-0017** | **Device-Local Home/Away State Machine** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The collar device **shall** determine its own HOME or AWAY state using a device-local state machine based on Received Signal Strength Indicator (RSSI) readings from paired base stations in range, without reliance on any cloud-side determination. |
-| **Rationale**    | PRD §6.4 states dual home/away state machines exist (device-local and cloud-side), and [ASSUMPTION: A-0016] confirms the device-local state machine is the sole in-scope authority for power gating — notably the Max GNSS smart power gate (SRS-INT-0027, SRS-OPER-0004) — with the cloud-side state machine external ([EXTERNAL: IoT Cloud backend team], SRS-OPER-0011). This requirement establishes the existence and RSSI basis of the device-local mechanism that SRS-INT-0027, SRS-OPER-0004, and SRS-PERF-0007 all depend on but which was not yet issued as its own requirement in any approved section. \| Verification Method: Demonstration \| Cross-References: SRS-INT-0027, SRS-OPER-0004, SRS-PERF-0007, SRS-OPER-0011 |
-| **Priority**     | High |
+| **Rationale**    | PRD §6.4 states dual home/away state machines exist (device-local and cloud-side), and [ASSUMPTION: A-0016] confirms the device-local state machine is the sole in-scope authority for power gating — notably the Max GNSS smart power gate (SRS-INT-0027, SRS-OPER-0004) — with the cloud-side state machine external ([EXTERNAL: IoT Cloud backend team], SRS-OPER-0011). This requirement establishes the existence and RSSI basis of the device-local mechanism that SRS-INT-0027, SRS-OPER-0004, and SRS-PERF-0007 all depend on but which was not yet issued as its own requirement in any approved section. \| Verification Method: Demonstration \| Cross-References: SRS-INT-0027, SRS-OPER-0004, SRS-PERF-0007, SRS-OPER-0011 | **Priority**     | High |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §6.4 |
@@ -300,8 +270,7 @@ This section specifies operational behavior of the deployed system that is not a
 | **SRS-OPER-0018** | **Device-Local Home-to-Away RSSI Transition Threshold** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The collar device's device-local home/away state machine (SRS-OPER-0017) **shall** transition from HOME to AWAY only when no paired base station RSSI reading exceeds −85 dBm for 5 consecutive readings taken at 1 s intervals. |
-| **Rationale**    | PRD §4.1/§6.4 state that home/away determination occurs "via multi-base RSSI" but supply no numeric threshold or debounce criterion; [ASSUMPTION: A-0022] resolves this gap (engineered by analogy to [ASSUMPTION: A-0009]'s Wi-Fi RSSI bound) with a conservative −85 dBm threshold, representing the typical "fair/poor" BLE boundary through 3+ interior walls or 15–25 m open-air range in a residential deployment, deliberately biased toward retaining HOME status because a false-AWAY transition needlessly enables the Max GNSS power gate (SRS-INT-0027, SRS-OPER-0004) and increases power draw, whereas a brief false-HOME delay does not. The 5-consecutive-reading/1 s-interval debounce filters transient RSSI dips (e.g., momentary body-shadowing) before committing the transition. This requirement was returned FAIL by the Feasibility Checker (v1; D3 Testability, D4 Completeness) for being issued as a non-normative PRD-gap notice rather than a testable SHALL; it is reissued here as a testable predicate now that [ASSUMPTION: A-0022] supplies the numeric basis, and is split from the AWAY-to-HOME hysteresis criterion (SRS-OPER-0024) per the Single-Predicate Rule. \| Verification Method: Test \| Cross-References: SRS-OPER-0017, SRS-OPER-0024 |
-| **Priority**     | Medium |
+| **Rationale**    | PRD §4.1/§6.4 state that home/away determination occurs "via multi-base RSSI" but supply no numeric threshold or debounce criterion; [ASSUMPTION: A-0022] resolves this gap (engineered by analogy to [ASSUMPTION: A-0009]'s Wi-Fi RSSI bound) with a conservative −85 dBm threshold, representing the typical "fair/poor" BLE boundary through 3+ interior walls or 15–25 m open-air range in a residential deployment, deliberately biased toward retaining HOME status because a false-AWAY transition needlessly enables the Max GNSS power gate (SRS-INT-0027, SRS-OPER-0004) and increases power draw, whereas a brief false-HOME delay does not. The 5-consecutive-reading/1 s-interval debounce filters transient RSSI dips (e.g., momentary body-shadowing) before committing the transition. This requirement was returned FAIL by the Feasibility Checker (v1; D3 Testability, D4 Completeness) for being issued as a non-normative PRD-gap notice rather than a testable SHALL; it is reissued here as a testable predicate now that [ASSUMPTION: A-0022] supplies the numeric basis, and is split from the AWAY-to-HOME hysteresis criterion (SRS-OPER-0024) per the Single-Predicate Rule. \| Verification Method: Test \| Cross-References: SRS-OPER-0017, SRS-OPER-0024 | **Priority**     | Medium |
 | **Stability**    | Likely-Change |
 | **Verification** | Inspection |
 | **Traceability** | PRD §6.4 |
@@ -311,8 +280,7 @@ This section specifies operational behavior of the deployed system that is not a
 | **SRS-OPER-0024** | **Device-Local Away-to-Home RSSI Hysteresis Threshold** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The collar device's device-local home/away state machine (SRS-OPER-0017) **shall** transition from AWAY to HOME only when at least one paired base station RSSI reading exceeds −80 dBm for 3 consecutive readings taken at 1 s intervals. |
-| **Rationale**    | [ASSUMPTION: A-0022] specifies a 5 dB hysteresis band between the AWAY-transition threshold (−85 dBm, SRS-OPER-0018) and this AWAY-to-HOME re-entry threshold (−80 dBm) to prevent rapid HOME/AWAY oscillation when RSSI hovers near the boundary, which would otherwise cause repeated toggling of the Max GNSS power gate (SRS-INT-0027) and unnecessary power draw. The shorter 3-reading debounce (vs. SRS-OPER-0018's 5-reading debounce) is an intentional asymmetry: re-establishing HOME status should be comparatively responsive once signal recovers, because remaining falsely in AWAY costs more GNSS-on power than a brief false-HOME determination. \| Verification Method: Test \| Cross-References: SRS-OPER-0017, SRS-OPER-0018<br><br>## 15.5 Collar Duty-Cycle & Power-Optimization Policy |
-| **Priority**     | Medium |
+| **Rationale**    | [ASSUMPTION: A-0022] specifies a 5 dB hysteresis band between the AWAY-transition threshold (−85 dBm, SRS-OPER-0018) and this AWAY-to-HOME re-entry threshold (−80 dBm) to prevent rapid HOME/AWAY oscillation when RSSI hovers near the boundary, which would otherwise cause repeated toggling of the Max GNSS power gate (SRS-INT-0027) and unnecessary power draw. The shorter 3-reading debounce (vs. SRS-OPER-0018's 5-reading debounce) is an intentional asymmetry: re-establishing HOME status should be comparatively responsive once signal recovers, because remaining falsely in AWAY costs more GNSS-on power than a brief false-HOME determination. \| Verification Method: Test \| Cross-References: SRS-OPER-0017, SRS-OPER-0018<br><br>## 15.5 Collar Duty-Cycle & Power-Optimization Policy | **Priority**     | Medium |
 | **Stability**    | Likely-Change |
 | **Verification** | Inspection |
 | **Traceability** | PRD §6.4 |
@@ -322,8 +290,7 @@ This section specifies operational behavior of the deployed system that is not a
 | **SRS-OPER-0019** | **Wellness-Mode Deep-Sleep Idle State** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The collar device, while in Wellness Mode and not actively processing a motion-triggered confirmation burst, **shall** remain in its deepest available low-power idle state. |
-| **Rationale**    | PRD §15.2 specifies deepest-sleep idle as the standard Wellness-Mode duty-cycle baseline underlying the stated battery-life targets; this is the operational-policy statement that the idle-current ceiling itself (SRS-FUNC-0011, ≤4 µA) is verified against. \| Verification Method: Analysis \| Cross-References: SRS-FUNC-0011, SRS-FUNC-0010 |
-| **Priority**     | High |
+| **Rationale**    | PRD §15.2 specifies deepest-sleep idle as the standard Wellness-Mode duty-cycle baseline underlying the stated battery-life targets; this is the operational-policy statement that the idle-current ceiling itself (SRS-FUNC-0011, ≤4 µA) is verified against. \| Verification Method: Analysis \| Cross-References: SRS-FUNC-0011, SRS-FUNC-0010 | **Priority**     | High |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §15.2 |
@@ -333,8 +300,7 @@ This section specifies operational behavior of the deployed system that is not a
 | **SRS-OPER-0020** | **GNSS Fix-Interval Change Application Timing** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | When the owner changes the Max collar variant's configured GNSS fix interval, the collar device **shall** apply the new interval no later than the start of the next scheduled fix-acquisition cycle. |
-| **Rationale**    | PRD §15.5 states that a fix-interval change takes effect "within one cycle," bounding how long a stale interval setting may persist. This is the timing/application-policy requirement; the interval's configurable range (30 min–24 h) and default value (2 h) are owned by §10 (SRS-INT-0023, SRS-INT-0024) and not restated here. \| Verification Method: Test \| Cross-References: SRS-INT-0023, SRS-INT-0024 |
-| **Priority**     | Medium |
+| **Rationale**    | PRD §15.5 states that a fix-interval change takes effect "within one cycle," bounding how long a stale interval setting may persist. This is the timing/application-policy requirement; the interval's configurable range (30 min–24 h) and default value (2 h) are owned by §10 (SRS-INT-0023, SRS-INT-0024) and not restated here. \| Verification Method: Test \| Cross-References: SRS-INT-0023, SRS-INT-0024 | **Priority**     | Medium |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §15.5 |
@@ -344,8 +310,7 @@ This section specifies operational behavior of the deployed system that is not a
 | **SRS-OPER-0021** | **Battery Cell Cycle-Life Validation Basis** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | Battery-life validation testing **shall** be performed using cells that have completed no fewer than 50 charge/discharge cycles prior to the validation measurement. |
-| **Rationale**    | PRD §15.6 specifies a DVT programmable-load validation methodology requiring cells aged to ≥50 cycles before the battery-life pass criterion (≥80% of the §10.4 minimum capacity at 25°C) is evaluated, ensuring the stated battery-life targets (SRS-PERF-0001, SRS-PERF-0002) are validated against realistically aged cells rather than fresh-cell best-case performance. \| Verification Method: Test \| Cross-References: SRS-PERF-0001, SRS-PERF-0002<br><br>## 15.6 Cloud-Loss Fallback Governance |
-| **Priority**     | Medium |
+| **Rationale**    | PRD §15.6 specifies a DVT programmable-load validation methodology requiring cells aged to ≥50 cycles before the battery-life pass criterion (≥80% of the §10.4 minimum capacity at 25°C) is evaluated, ensuring the stated battery-life targets (SRS-PERF-0001, SRS-PERF-0002) are validated against realistically aged cells rather than fresh-cell best-case performance. \| Verification Method: Test \| Cross-References: SRS-PERF-0001, SRS-PERF-0002<br><br>## 15.6 Cloud-Loss Fallback Governance | **Priority**     | Medium |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §15.6 |
@@ -355,8 +320,7 @@ This section specifies operational behavior of the deployed system that is not a
 | **SRS-OPER-0022** | **Device-Local Fallback Authority on Extended Cloud Loss** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The collar device **shall** rely solely on its device-local home/away state machine (SRS-OPER-0017) for all in-scope power-gating behavior when the base station has not had successful cloud contact for more than 24 hours, without requiring any additional fallback logic beyond the state machine's ordinary operation. |
-| **Rationale**    | PRD §6.4 frames the device-local state machine's role as a ">24 h cloud loss" fallback governing the Max GNSS gate, implying the cloud-side state machine (external, [EXTERNAL: IoT Cloud backend team]) would otherwise have some role during shorter cloud outages. Per [ASSUMPTION: A-0016], however, the device-local state machine is the SOLE in-scope authority for power gating at all times, not only after 24 hours; this requirement makes explicit that no additional in-scope fallback mechanism activates at the 24-hour mark — the device-local state machine's continuous, unconditional operation (SRS-OPER-0017) already satisfies the PRD's fallback framing without requiring separate logic. \| Verification Method: Analysis \| Cross-References: SRS-OPER-0017, SRS-OPER-0011<br><br>## 15.7 Product Service Lifetime Reference |
-| **Priority**     | Medium |
+| **Rationale**    | PRD §6.4 frames the device-local state machine's role as a ">24 h cloud loss" fallback governing the Max GNSS gate, implying the cloud-side state machine (external, [EXTERNAL: IoT Cloud backend team]) would otherwise have some role during shorter cloud outages. Per [ASSUMPTION: A-0016], however, the device-local state machine is the SOLE in-scope authority for power gating at all times, not only after 24 hours; this requirement makes explicit that no additional in-scope fallback mechanism activates at the 24-hour mark — the device-local state machine's continuous, unconditional operation (SRS-OPER-0017) already satisfies the PRD's fallback framing without requiring separate logic. \| Verification Method: Analysis \| Cross-References: SRS-OPER-0017, SRS-OPER-0011<br><br>## 15.7 Product Service Lifetime Reference | **Priority**     | Medium |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §6.4 |
@@ -366,15 +330,13 @@ This section specifies operational behavior of the deployed system that is not a
 | **SRS-OPER-0023** | **Expected Product Service Lifetime Reference Figure** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The system's operational and durability requirements that reference an expected service lifetime **shall** use 2 years as the minimum testable floor, consistent with the Product Context Profile's user-confirmed ~2–3 year expected service lifetime figure. |
-| **Rationale**    | This requirement formalizes, as its own SRS-OPER block, the same PCP §8 user-confirmed lifetime figure that SRS-RELI-0001 (§13) already applies as its qualification duration; §13's Drafter Notes flagged that no A-ID currently carries this figure and recommended one be issued. Issuing it here as an explicit OPER requirement — rather than only as an inline PCP dependency note on SRS-RELI-0001 — gives the figure a citable SRS-ID that future sections (e.g., §16 Maintainability's OTA-support-lifetime requirements) can cross-reference directly instead of re-deriving it from the PCP each time. \| Verification Method: Inspection \| Cross-References: SRS-RELI-0001 |
-| **Priority**     | Medium |
+| **Rationale**    | This requirement formalizes, as its own SRS-OPER block, the same PCP §8 user-confirmed lifetime figure that SRS-RELI-0001 (§13) already applies as its qualification duration; §13's Drafter Notes flagged that no A-ID currently carries this figure and recommended one be issued. Issuing it here as an explicit OPER requirement — rather than only as an inline PCP dependency note on SRS-RELI-0001 — gives the figure a citable SRS-ID that future sections (e.g., §16 Maintainability's OTA-support-lifetime requirements) can cross-reference directly instead of re-deriving it from the PCP each time. \| Verification Method: Inspection \| Cross-References: SRS-RELI-0001 | **Priority**     | Medium |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD — ABSENT: service_lifetime_duration_value |
 
-
----
 ## 16. Maintainability
+
 
 
 ## 16.0 Scope Note
@@ -395,8 +357,7 @@ This section specifies the *lifetime-maintenance* obligations implied by PRD §1
 | **SRS-MAINT-0001** | **OTA-Update Capability Availability Through Supported Service Lifetime** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The system **shall** retain OTA update capability, for both collar variants and both base station tiers, for no less than 2 years from product launch. |
-| **Rationale**    | Derived from PRD §12.7. |
-| **Priority**     | High |
+| **Rationale**    | Derived from PRD §12.7. | **Priority**     | High |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §12.7 |
@@ -406,8 +367,7 @@ This section specifies the *lifetime-maintenance* obligations implied by PRD §1
 | **SRS-MAINT-0002** | **SBOM Currency Maintenance Across Supported Service Lifetime** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The system's software bill of materials **shall** be kept current for each in-support firmware version throughout the 2-year supported service lifetime defined by SRS-MAINT-0001. |
-| **Rationale**    | Derived from PRD §12.7. |
-| **Priority**     | Medium |
+| **Rationale**    | Derived from PRD §12.7. | **Priority**     | Medium |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §12.7 |
@@ -417,21 +377,7 @@ This section specifies the *lifetime-maintenance* obligations implied by PRD §1
 | **SRS-MAINT-0003** | **Post-Launch Vulnerability-Disclosure Process Maintenance** |
 |------------------|---------------------------------------------------------------------|
 | **Statement**    | The public vulnerability-disclosure policy required by SRS-SEC-0006 **shall** remain active and operational for no less than the 2-year supported service lifetime defined by SRS-MAINT-0001. |
-| **Rationale**    | Derived from PRD §12.7. |
-| **Priority**     | High |
+| **Rationale**    | Derived from PRD §12.7. | **Priority**     | High |
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §12.7 |
-
-
-
----
-
-## Coverage Notes
-
-- **§13 Reliability & Availability:** SRS-RELI-0001 through SRS-RELI-0004 (IP67 lifetime retention, collar availability, base station uptime, OTA success rate)
-- **§14 Usability:** SRS-UX-0001 through SRS-UX-0029 (pairing/onboarding, physical interaction, LED/haptic feedback, base station UX, CCF UX, status/error communication, app-interface obligations, OTA update UX)
-- **§15 Operational Requirements:** SRS-OPER-0001 through SRS-OPER-0023 (base station operation, device-idle profiles, species persistence, home/away state machine, GNSS interval timing, battery validation, cloud-loss fallback, service lifetime reference)
-- **§16 Maintainability:** SRS-MAINT-0001 through SRS-MAINT-0003 (OTA capability lifetime, SBOM currency, vulnerability-disclosure process maintenance)
-- **Total requirement blocks:** 59 (4 RELI + 29 UX + 23 OPER + 3 MAINT)
-- **Note:** SRS-OPER-0008 through SRS-OPER-0011 are attributed to EXTERNAL parties (Mobile App team, IoT Cloud backend team) and are included for interface-awareness.
