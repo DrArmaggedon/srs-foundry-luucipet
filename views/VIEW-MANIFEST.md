@@ -9,6 +9,6 @@
 | Hardware | view-hardware.md | 47 | 44 KB |
 | Interface | view-interface.md | 61 | 38 KB |
 | Operations | view-operations.md | 20 | 49 KB |
-| Qa Verification | view-qa-verification.md | 0 | 48 KB |
+| Qa Verification | view-qa-verification.md | 0 | 55 KB |
 | Regulatory | view-regulatory.md | 77 | 49 KB |
 | Safety | view-safety.md | 21 | 11 KB |

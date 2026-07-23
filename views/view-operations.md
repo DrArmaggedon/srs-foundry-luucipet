@@ -1,7 +1,7 @@
 > **DERIVED VIEW** — Filtered excerpt of Master SRS
 > **Source:** SRS-LUUCIPET-001, Revision 1.0, July 2026
 > **Master SRS:** `output/SRS-LUUCIPET-FINAL.md`
-> **View Generated:** 2026-07-22T21:00:00Z
+> **View Generated:** 2026-07-23T02:00:00Z
 ⚠️ For full context, always refer to the Master SRS.
 
 ---
