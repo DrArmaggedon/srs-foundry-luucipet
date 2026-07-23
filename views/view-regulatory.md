@@ -1,7 +1,7 @@
 > **DERIVED VIEW** — Filtered excerpt of Master SRS
 > **Source:** SRS-LUUCIPET-001, Revision 1.0, July 2026
 > **Master SRS:** `output/SRS-LUUCIPET-FINAL.md`
-> **View Generated:** 2026-07-22T21:00:00Z
+> **View Generated:** 2026-07-23T01:00:00Z
 ⚠️ For full context, always refer to the Master SRS.
 
 ---
@@ -805,6 +805,62 @@ This section binds the product design to the named technical standards whose tes
 
 ---
 
+
+---
+
+
+---
+
+
+## 2.4 General Constraints — Cross-Variant Standards Requirements
+
+<a id="srs-comp-0001"></a>
+
+| **SRS-COMP-0001** | **Require collar-agnostic base station firmware** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | Base Station firmware **shall** from a single common firmware image, exhibit identical pairing and relay behavior for both Mini and Max collar variants concurrently. |
+| **Rationale**    | Derived from PRD §4.3. | **Priority**     | High |
+| **Stability**    | Stable |
+| **Verification** | Test |
+| **Traceability** | PRD §4.3 · SRS-COMP-0002 |
+
+<a id="srs-comp-0002"></a>
+
+| **SRS-COMP-0002** | **Require universal CCF-to-device mechanical compatibility** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | All CCF accessory variants (widths S/M/L; collar-types -RC/-MG) **shall** be mechanically compatible with both Mini and Max collar devices via the common Twist-Lock interface geometry. |
+| **Rationale**    | Derived from PRD §4.1. | **Priority**     | Critical |
+| **Stability**    | Stable |
+| **Verification** | Test |
+| **Traceability** | PRD §4.1 · SRS-COMP-0001 |
+
+<a id="srs-comp-0003"></a>
+
+| **SRS-COMP-0003** | **Require equivalent behavioral-classification outputs across collar variants** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The Mini and Max collar variants **shall** exhibit equivalent behavioral-classification outputs. |
+| **Rationale**    | Derived from PRD §4.3 — ensures classification consistency regardless of variant. | **Priority**     | High |
+| **Stability**    | Stable |
+| **Verification** | Inspection |
+| **Traceability** | PRD §4.3 · SRS-COMP-0001 |
+
+<a id="srs-comp-0031"></a>
+
+| **SRS-COMP-0031** | **Require interoperable common BLE communication protocol across variants** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The Mini and Max collar variants **shall** use an interoperable common BLE communication protocol. |
+| **Rationale**    | Derived from PRD §4.3 — ensures cross-variant protocol compatibility. | **Priority**     | High |
+| **Stability**    | Stable |
+| **Verification** | Inspection |
+| **Traceability** | PRD §4.3 · SRS-COMP-0003 |<a id="srs-func-0001"></a>
+
+| **SRS-FUNC-0001** | **Detect CCF breakaway/separation signature** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The collar device **shall** detect the CCF breakaway/separation signature using accelerometer-based sensing and commit a persistent breakaway event record to non-volatile storage within 5 s of the separation event, with a false-positive rate not exceeding 0.1% per device-wear-day and a true-event detection rate of at least 99% under DVT drop/tension conditions. |
+| **Rationale**    | Derived from PRD §10.1.3.6. | **Priority**     | Critical |
+| **Stability**    | Stable |
+| **Verification** | Test |
+| **Traceability** | PRD §10.1.3.6 · SRS-FUNC-0002, SRS-FUNC-0003, SRS-OPER-0008 |
 
 ---
 

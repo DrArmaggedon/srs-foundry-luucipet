@@ -1,78 +1,20 @@
 > **DERIVED VIEW** — Filtered excerpt of Master SRS
 > **Source:** SRS-LUUCIPET-001, Revision 1.0, July 2026
 > **Master SRS:** `output/SRS-LUUCIPET-FINAL.md`
-> **View Generated:** 2026-07-22T21:00:00Z
+> **View Generated:** 2026-07-23T01:00:00Z
 ⚠️ For full context, always refer to the Master SRS.
 
 ---
 
 ## Handoff Document — Mobile App Team
 
-This document contains requirements relevant to the Mobile App team, including [EXTERNAL: Mobile App team] obligations from the LUUCIPet SRS.
-
-### External-Party Requirements
-
-<a id="srs-oper-0008"></a>
-
-| **SRS-OPER-0008** | **Mobile App post-breakaway owner alert (external)** |
-|------------------|---------------------------------------------------------------------|
-| **Statement**    | The Mobile App **shall** display a "CCF Replacement Required" notification directing the owner to obtain a replacement CCF, upon receipt of a breakaway/separation-signature event delivered from the device via the cloud. |
-| **Rationale**    | Derived from PRD §10.1.3.6. | **Priority**     | High |
-| **Stability**    | Stable |
-| **Verification** | Inspection |
-| **Traceability** | PRD §10.1.3.6 · SRS-FUNC-0001, SRS-FUNC-0002 |
-
-<a id="srs-oper-0009"></a>
-
-| **SRS-OPER-0009** | **Mobile App species re-onboarding flow (external)** |
-|------------------|---------------------------------------------------------------------|
-| **Statement**    | The Mobile App **shall** provide a species re-onboarding flow that re-assigns the device's species classifier profile. |
-| **Rationale**    | Derived from PRD §4.5. | **Priority**     | Medium |
-| **Stability**    | Stable |
-| **Verification** | Inspection |
-| **Traceability** | PRD §4.5 · SRS-OPER-0003 |
-
-<a id="srs-oper-0010"></a>
-
-| **SRS-OPER-0010** | **Mobile App CCF fitment/sizing guidance (external)** |
-|------------------|---------------------------------------------------------------------|
-| **Statement**    | The Mobile App **shall** provide owner-facing CCF sizing and fitment guidance to help the owner select the correct CCF SKU. |
-| **Rationale**    | Derived from PRD §14.2. | **Priority**     | Medium |
-| **Stability**    | Likely-Change |
-| **Verification** | Inspection |
-| **Traceability** | PRD §14.2 · SRS-OPER-0005 |
-
-<a id="srs-func-0041"></a>
-
-| **SRS-FUNC-0041** | **App-Side Scratching Threshold Configuration UI (external)** |
-|------------------|---------------------------------------------------------------------|
-| **Statement**    | The Mobile App **shall** provide a user interface for configuring the Scratching alert threshold. |
-| **Rationale**    | Derived from PRD §7.8. | **Priority**     | High |
-| **Stability**    | Stable |
-| **Verification** | Inspection |
-| **Traceability** | PRD §7.8 · SRS-FUNC-0036 |
-
-<a id="srs-func-0042"></a>
-
-| **SRS-FUNC-0042** | **App-Side Shaking Threshold Configuration UI (external)** |
-|------------------|---------------------------------------------------------------------|
-| **Statement**    | The Mobile App **shall** provide a user interface for configuring the Shaking alert threshold. |
-| **Rationale**    | Derived from PRD §7.8. | **Priority**     | High |
-| **Stability**    | Stable |
-| **Verification** | Inspection |
-| **Traceability** | PRD §7.8 · SRS-FUNC-0038
+This document contains **all** requirements from the LUUCIPet SRS relevant to the Mobile App team — both [EXTERNAL: Mobile App team] deliverables and in-scope device-side interface obligations.
 
 ---
 
-<a id="srs-conn-0023"></a>
+## §5 — OTA Firmware Updates
 
-| **SRS-CONN-0023** | **Mobile App Issuance of Insight-Mode Activation Command (external)** |
-|------------------|---------------------------------------------------------------------|
-| **Statement**    | The Mobile App **shall** issue the Insight-mode activation command to the collar-mounted device. |
-| **Rationale**    | Derived from PRD §7.1. | **Priority**     | High |
-| **Stability**    | Stable |
-| **Verification** | Inspection |
-| **Traceability** | PRD §7.1 · SRS-CONN-0022
+### [EXTERNAL: Mobile App team]
 
 <a id="srs-func-0059"></a>
 
@@ -93,4 +35,188 @@ This document contains requirements relevant to the Mobile App team, including [
 | **Stability**    | Stable |
 | **Verification** | Inspection |
 | **Traceability** | PRD §9.5 · SRS-FUNC-0058
+
+### In-Scope Interface Obligations (Device Side)
+
+<a id="srs-func-0043"></a>
+
+| **SRS-FUNC-0043** | **OTA Capability Mandatory on All Collar Variants** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** provide over-the-air firmware update capability on every collar-mounted device variant (Mini and Max). |
+| **Rationale**    | Derived from PRD §9.1. | **Priority**     | Critical |
+| **Stability**    | Stable |
+| **Verification** | Demonstration |
+| **Traceability** | PRD §9.1 · SRS-FUNC-0034 |
+
+<a id="srs-func-0044"></a>
+
+| **SRS-FUNC-0044** | **OTA Capability Mandatory on All Base Station Tiers** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** provide over-the-air firmware update capability on every base station tier (Charging and Relay). |
+| **Rationale**    | Derived from PRD §9.1. | **Priority**     | Critical |
+| **Stability**    | Stable |
+| **Verification** | Demonstration |
+| **Traceability** | PRD §9.1 · SRS-FUNC-0043
+
+<a id="srs-func-0045"></a>
+
+| **SRS-FUNC-0045** | **Cloud-to-Base OTA Transport Protocol** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** transport OTA firmware images from the cloud to the base station over Wi-Fi using TLS version 1.3. |
+| **Rationale**    | Derived from PRD §9.2. | **Priority**     | High |
+| **Stability**    | Stable |
+| **Verification** | Test |
+| **Traceability** | PRD §9.2 · SRS-CONN-0014 |
+
+<a id="srs-func-0046"></a>
+
+| **SRS-FUNC-0046** | **Base Station Staging of Collar OTA Images** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** stage a received collar OTA firmware image at the base station prior to delivery of that image to the collar-mounted device. |
+| **Rationale**    | Derived from PRD §9.2. | **Priority**     | Medium |
+| **Stability**    | Stable |
+| **Verification** | Test |
+| **Traceability** | PRD §9.2 · SRS-FUNC-0047 |
+
+<a id="srs-func-0047"></a>
+
+| **SRS-FUNC-0047** | **Base-to-Collar OTA Image Delivery Over Secured BLE Link** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** deliver a staged OTA firmware image from the base station to the collar-mounted device over the secured BLE link defined in §8 Security. |
+| **Rationale**    | Derived from PRD §9.2. | **Priority**     | Critical |
+| **Stability**    | Stable |
+| **Verification** | Inspection |
+| **Traceability** | PRD §9.2 · SRS-CONN-0009 |
+
+<a id="srs-func-0048"></a>
+
+| **SRS-FUNC-0048** | **Base Station Self-OTA Without User Action** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** update base station firmware via self-initiated OTA over the Wi-Fi link without requiring user action. |
+| **Rationale**    | Derived from PRD §11.5. | **Priority**     | High |
+| **Stability**    | Stable |
+| **Verification** | Demonstration |
+| **Traceability** | PRD §11.5 · SRS-FUNC-0044
+
+<a id="srs-func-0049"></a>
+
+| **SRS-FUNC-0049** | **Collar OTA Install Restricted to Charging-Cradle-Docked State** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** install a collar OTA firmware update only while the collar-mounted device is docked in the charging cradle. |
+| **Rationale**    | Derived from PRD §9.2. | **Priority**     | Critical |
+| **Stability**    | Stable |
+| **Verification** | Test |
+| **Traceability** | PRD §9.2 · SRS-FUNC-0050, SRS-FUNC-0056 |
+
+<a id="srs-func-0050"></a>
+
+| **SRS-FUNC-0050** | **Docked-Install Gate Shall Not Be Remotely Bypassable** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall not** allow the charging-cradle-docked install precondition to be bypassed by any remote command. |
+| **Rationale**    | Derived from PRD §9.2. | **Priority**     | Critical |
+| **Stability**    | Stable |
+| **Verification** | Test |
+| **Traceability** | PRD §9.2 · SRS-FUNC-0049 |
+
+<a id="srs-func-0051"></a>
+
+| **SRS-FUNC-0051** | **Minimum Battery Reserve Before OTA Install** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** require a state-of-charge of no less than 10% before initiating a collar OTA firmware installation. |
+| **Rationale**    | Derived from PRD §9.2. | **Priority**     | High |
+| **Stability**    | Stable |
+| **Verification** | Test |
+| **Traceability** | PRD §9.2 · SRS-FUNC-0049, SRS-FUNC-0057
+
+<a id="srs-func-0052"></a>
+
+| **SRS-FUNC-0052** | **Minimum OTA Image Signature Strength** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** require every OTA firmware image to be signed using an algorithm of no less than 256-bit ECDSA or RSA-2048 strength. |
+| **Rationale**    | Derived from PRD §9.3. | **Priority**     | Critical |
+| **Stability**    | Stable |
+| **Verification** | Inspection |
+| **Traceability** | PRD §9.3 · SRS-FUNC-0053 |
+
+<a id="srs-func-0053"></a>
+
+| **SRS-FUNC-0053** | **OTA Image Signature Verification Before Commit** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** verify the signature of an OTA firmware image before committing or executing that image. |
+| **Rationale**    | Derived from PRD §9.3. | **Priority**     | Critical |
+| **Stability**    | Stable |
+| **Verification** | Test |
+| **Traceability** | PRD §9.3 · SRS-FUNC-0052 |
+
+<a id="srs-func-0054"></a>
+
+| **SRS-FUNC-0054** | **Anti-Rollback via Monotonic Version Counter** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** prevent installation of an OTA firmware image whose version is lower than the current monotonic version counter value held in secure storage. |
+| **Rationale**    | Derived from PRD §9.3. | **Priority**     | Critical |
+| **Stability**    | Stable |
+| **Verification** | Inspection |
+| **Traceability** | PRD §9.3 |
+
+<a id="srs-func-0055"></a>
+
+| **SRS-FUNC-0055** | **Atomic OTA Installation** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** install an OTA firmware image atomically, such that the installation either completes in full or leaves the prior firmware image unmodified. |
+| **Rationale**    | Derived from PRD §9.4. | **Priority**     | Critical |
+| **Stability**    | Stable |
+| **Verification** | Test |
+| **Traceability** | PRD §9.4 · SRS-FUNC-0056 |
+
+<a id="srs-func-0056"></a>
+
+| **SRS-FUNC-0056** | **Dual-Bank Auto-Revert on Boot Failure** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** automatically revert to the previous firmware bank if the device fails to boot successfully following an OTA installation. |
+| **Rationale**    | Derived from PRD §9.4. | **Priority**     | Critical |
+| **Stability**    | Stable |
+| **Verification** | Test |
+| **Traceability** | PRD §9.4 · SRS-FUNC-0055, SRS-FUNC-0057 |
+
+<a id="srs-func-0057"></a>
+
+| **SRS-FUNC-0057** | **No Unrecoverable State on Power Loss or Delivery-Connection Drop During Install** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall not** enter an unrecoverable device state as a result of a power loss or a loss of the delivery connection occurring during an OTA installation. |
+| **Rationale**    | Derived from PRD §9.4. | **Priority**     | Critical |
+| **Stability**    | Stable |
+| **Verification** | Analysis |
+| **Traceability** | PRD §9.4 · SRS-FUNC-0055, SRS-FUNC-0056, SRS-FUNC-0051
+
+<a id="srs-func-0058"></a>
+
+| **SRS-FUNC-0058** | **Device-Side OTA Update State Reporting** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** report the current OTA update state as one of Downloading, Verifying, Pending Installation, Installing, Success, or Failed. |
+| **Rationale**    | Derived from PRD §9.5. | **Priority**     | Medium |
+| **Stability**    | Stable |
+| **Verification** | Test |
+| **Traceability** | PRD §9.5 · SRS-FUNC-0059, SRS-FUNC-0060 |
+
+<a id="srs-func-0061"></a>
+
+| **SRS-FUNC-0061** | **SBOM Production Per OTA Release** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** produce a Software Bill of Materials for every OTA firmware release. |
+| **Rationale**    | Derived from PRD §9.5. | **Priority**     | Medium |
+| **Stability**    | Stable |
+| **Verification** | Inspection |
+| **Traceability** | PRD §9.5 |
+
+<a id="srs-func-0062"></a>
+
+| **SRS-FUNC-0062** | **Tier-2 Classifier Delivery Restricted to Embedded OTA Components** |
+|------------------|---------------------------------------------------------------------|
+| **Statement**    | The system **shall** deliver Tier-2 behavior classifier models only as components embedded within an OTA firmware update. |
+| **Rationale**    | Derived from PRD §9.5. | **Priority**     | High |
+| **Stability**    | Stable |
+| **Verification** | Inspection |
+| **Traceability** | PRD §9.5 · SRS-FUNC-0034, SRS-FUNC-0035, SRS-FUNC-0052
+
+--- |
 
