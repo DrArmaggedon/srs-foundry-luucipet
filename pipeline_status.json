@@ -1,7 +1,7 @@
 {
   "project": "Luucipet",
   "session_id": "S-luucipet",
-  "last_updated": "2026-07-24T17:50:01Z",
+  "last_updated": "2026-07-24T18:16:24Z",
   "gates": {
     "PRD_PROCESSING": {
       "status": "PASS",
@@ -62,7 +62,7 @@
   },
   "summary": {
     "sections": 18,
-    "requirements": 305,
+    "requirements": 365,
     "rtm_rows": 292,
     "conflicts": 0,
     "standards": "IEEE 830 / ISO/IEC/IEEE 29148"

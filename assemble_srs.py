@@ -140,6 +140,26 @@ def extract_drafter_notes(text):
 
 def extract_prose_and_reqs(text):
     """Split section body into prose paragraphs and requirement blocks."""
+    # Convert ```plain blocks to pipe-delimited format
+    for m in re.finditer(r"```plain\s*\n(.+?)```", text, re.DOTALL):
+        block = m.group(1)
+        def _f(name, default=""):
+            pm = re.search(r"^" + re.escape(name) + r":\s*(.+?)$", block, re.MULTILINE)
+            return pm.group(1).strip() if pm else default
+        rid = _f("ID")
+        if rid:
+            title = _f("Title", "Untitled")
+            stmt = _f("Statement", "")
+            pri = _f("Priority", "Medium")
+            stab = _f("Stability", "Stable")
+            src = _f("Source", "")
+            rat = _f("Rationale", "")
+            vm = _f("Verification Method", "")
+            xr = _f("Cross-References", "")
+            if not xr or xr.lower() == "none":
+                xr = src
+            converted = f"**{rid}** | {title} | {stmt} | Priority: {pri} | Stability: {stab} | Source: [{src}] | Rationale: {rat} | Verification Method: {vm} | Cross-References: {xr}"
+            text = text.replace(m.group(0), converted)
     lines = text.split('\n')
     result = []
     current = []
