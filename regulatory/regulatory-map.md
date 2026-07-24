@@ -7,53 +7,255 @@
 
 ## A. Horizontal — Radio / Wireless
 
-| RM-ID   | Standard/Reg                                                                              | Clause                | Market                  | Applies To    | Confidence | Verification note                                                                                                                                                                                                                                                                                        |
-| :------ | :---------------------------------------------------------------------------------------- | :-------------------- | :---------------------- | :------------ | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| RM-0001 | FCC 47 CFR Part 15 Subpart C                                                              | §15.247               | US                      | Mini/Max/Base | CONFIRMED  | BLE 2.4 GHz intentional radiator.                                                                                                                                                                                                                                                                        |
-| RM-0002 | FCC 47 CFR Part 15 Subpart B                                                              | §15.107/.109          | US                      | System        | CONFIRMED  | Unintentional emissions.                                                                                                                                                                                                                                                                                 |
-| RM-0003 | RED Directive 2014/53/EU                                                                  | Art 3.1(a),3.1(b),3.2 | EU                      | Mini/Max/Base | CONFIRMED  | Current.                                                                                                                                                                                                                                                                                                 |
-| RM-0004 | ETSI EN 300 328                                                                           | §4.3                  | EU                      | Mini/Max/Base | INDICATIVE | Correct 2.4 GHz RED HS; PRD cites v2.2.2 — verify exact OJ-listed version.                                                                                                                                                                                                                               |
-| RM-0005 | UK Radio Equipment Regs 2017 (SI 2017/1206)                                               | —                     | UK                      | Mini/Max/Base | CONFIRMED  | UKCA.                                                                                                                                                                                                                                                                                                    |
-| RM-0006 | ISED RSS-247 Issue 2 + RSS-Gen Issue 5                                                    | —                     | CA                      | Mini/Max/Base | INDICATIVE | Verify current issue numbers at submission.                                                                                                                                                                                                                                                              |
-| RM-0007 | AS/NZS 4268:2017                                                                          | —                     | AU/NZ                   | Mini/Max/Base | INDICATIVE | RCM; verify no newer edition.                                                                                                                                                                                                                                                                            |
-| RM-0008 | Bluetooth SIG Qualification (QDID)                                                        | —                     | Global                  | all BLE       | CONFIRMED  | Mandatory per Bluetooth SIG.                                                                                                                                                                                                                                                                             |
-| RM-0009 | GNSS passive-receiver intentional-radiator exemption                                      | —                     | US/EU/UK/CA/AU-NZ       | Max           | INDICATIVE | Per-market; PRD §13.1 defers to Regulatory Lead. **Escalated to user.**                                                                                                                                                                                                                                  |
-| RM-0029 | IEC 62311 / EN 62311 (RF human-exposure) + FCC RF-exposure rules (47 CFR §1.1310/§2.1093) | —                     | EU/UK/US (+ per-market) | Mini/Max/Base | INDICATIVE | USER DECISION: map now, confirm per-market applicability/thresholds. Tier-1: standards exist/current. Animal-worn 2.4 GHz TX (≥+8 dBm) + mains base station plausibly trigger RF-exposure assessment; low-power animal-worn category & exact thresholds per-market. Annotate derived reqs [INDICATIVE]. |
+| **RM-0001** | **FCC 47 CFR Part 15 Subpart C** |
+|-------------|----------------------------|
+| **Clause** | §15.247 |
+| **Market** | US |
+| **Applies To** | Mini/Max/Base |
+| **Confidence** | CONFIRMED |
+| **Verification note** | BLE 2.4 GHz intentional radiator. |
+
+| **RM-0002** | **FCC 47 CFR Part 15 Subpart B** |
+|-------------|----------------------------|
+| **Clause** | §15.107/.109 |
+| **Market** | US |
+| **Applies To** | System |
+| **Confidence** | CONFIRMED |
+| **Verification note** | Unintentional emissions. |
+
+| **RM-0003** | **RED Directive 2014/53/EU** |
+|-------------|------------------------|
+| **Clause** | Art 3.1(a),3.1(b),3.2 |
+| **Market** | EU |
+| **Applies To** | Mini/Max/Base |
+| **Confidence** | CONFIRMED |
+| **Verification note** | Current. |
+
+| **RM-0004** | **ETSI EN 300 328** |
+|-------------|---------------|
+| **Clause** | §4.3 |
+| **Market** | EU |
+| **Applies To** | Mini/Max/Base |
+| **Confidence** | INDICATIVE |
+| **Verification note** | Correct 2.4 GHz RED HS; PRD cites v2.2.2 — verify exact OJ-listed version. |
+
+| **RM-0005** | **UK Radio Equipment Regs 2017 (SI 2017/1206)** |
+|-------------|-------------------------------------------|
+| **Clause** | — |
+| **Market** | UK |
+| **Applies To** | Mini/Max/Base |
+| **Confidence** | CONFIRMED |
+| **Verification note** | UKCA. |
+
+| **RM-0006** | **ISED RSS-247 Issue 2 + RSS-Gen Issue 5** |
+|-------------|--------------------------------------|
+| **Clause** | — |
+| **Market** | CA |
+| **Applies To** | Mini/Max/Base |
+| **Confidence** | INDICATIVE |
+| **Verification note** | Verify current issue numbers at submission. |
+
+| **RM-0007** | **AS/NZS 4268:2017** |
+|-------------|----------------|
+| **Clause** | — |
+| **Market** | AU/NZ |
+| **Applies To** | Mini/Max/Base |
+| **Confidence** | INDICATIVE |
+| **Verification note** | RCM; verify no newer edition. |
+
+| **RM-0008** | **Bluetooth SIG Qualification (QDID)** |
+|-------------|----------------------------------|
+| **Clause** | — |
+| **Market** | Global |
+| **Applies To** | all BLE |
+| **Confidence** | CONFIRMED |
+| **Verification note** | Mandatory per Bluetooth SIG. |
+
+| **RM-0009** | **GNSS passive-receiver intentional-radiator exemption** |
+|-------------|----------------------------------------------------|
+| **Clause** | — |
+| **Market** | US/EU/UK/CA/AU-NZ |
+| **Applies To** | Max |
+| **Confidence** | INDICATIVE |
+| **Verification note** | Per-market; PRD §13.1 defers to Regulatory Lead. **Escalated to user.** |
+
+| **RM-0029** | **IEC 62311 / EN 62311 (RF human-exposure) + FCC RF-exposure rules (47 CFR §1.1310/§2.1093)** |
+|-------------|-----------------------------------------------------------------------------------------|
+| **Clause** | — |
+| **Market** | EU/UK/US (+ per-market) |
+| **Applies To** | Mini/Max/Base |
+| **Confidence** | INDICATIVE |
+| **Verification note** | USER DECISION: map now, confirm per-market applicability/thresholds. Tier-1: standards exist/current. Animal-worn 2.4 GHz TX (≥+8 dBm) + mains base station plausibly trigger RF-exposure assessment; low-power animal-worn category & exact thresholds per-market. Annotate derived reqs [INDICATIVE]. |
+
 
 ## B. Horizontal — Battery / Electrical Safety
 
-| RM-ID   | Standard/Reg                             | Clause                                       | Market     | Applies To    | Confidence                          | Verification note                                                                                                                                                                                                                                                    |
-| :------ | :--------------------------------------- | :------------------------------------------- | :--------- | :------------ | :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| RM-0010 | UN 38.3                                  | Part III 38.3                                | Global     | Mini/Max      | CONFIRMED                           | Before pilot production.                                                                                                                                                                                                                                             |
-| RM-0011 | IEC 62133-2:2017 **+AMD1:2021** (Ed 1.1) | Cl 7                                         | EU (+intl) | Mini/Max      | CONFIRMED (version-corrected)       | PRD cites bare :2017 → cite with AMD1. ED2 effective 2026-05-29, monitor.                                                                                                                                                                                            |
-| RM-0012 | UL 1642 / UL 2054                        | —                                            | US         | Mini/Max      | CONFIRMED                           | US cell/pack.                                                                                                                                                                                                                                                        |
-| RM-0013 | EN 62368-1:2020 / UL 62368-1             | —                                            | EU, US     | Base          | CONFIRMED                           | Mains-powered base station.                                                                                                                                                                                                                                          |
-| RM-0014 | EU Battery Regulation (EU) 2023/1542     | Art 6, **Art 11 removability**, labelling/CE | EU         | Mini/Max/Base | CONFIRMED (removability INDICATIVE) | Applicable since 18 Aug 2025; **Art 11 end-user removability mandatory 18 Feb 2027**. ⚠️ LUUCIPet battery is NON-SWAPPABLE (§14.1) → **potential conflict** vs Art 11 within 2–3 yr market life. Verify small/sealed/IP-rated exemption. → Conflict Resolver + user. |
+| **RM-0010** | **UN 38.3** |
+|-------------|----------|
+| **Clause** | Part III 38.3 |
+| **Market** | Global |
+| **Applies To** | Mini/Max |
+| **Confidence** | CONFIRMED |
+| **Verification note** | Before pilot production. |
+
+| **RM-0011** | **IEC 62133-2:2017 **+AMD1:2021** (Ed 1.1)** |
+|-------------|----------------------------------------|
+| **Clause** | Cl 7 |
+| **Market** | EU (+intl) |
+| **Applies To** | Mini/Max |
+| **Confidence** | CONFIRMED (version-corrected) |
+| **Verification note** | PRD cites bare :2017 → cite with AMD1. ED2 effective 2026-05-29, monitor. |
+
+| **RM-0012** | **UL 1642 / UL 2054** |
+|-------------|-----------------|
+| **Clause** | — |
+| **Market** | US |
+| **Applies To** | Mini/Max |
+| **Confidence** | CONFIRMED |
+| **Verification note** | US cell/pack. |
+
+| **RM-0013** | **EN 62368-1:2020 / UL 62368-1** |
+|-------------|----------------------------|
+| **Clause** | — |
+| **Market** | EU, US |
+| **Applies To** | Base |
+| **Confidence** | CONFIRMED |
+| **Verification note** | Mains-powered base station. |
+
+| **RM-0014** | **EU Battery Regulation (EU) 2023/1542** |
+|-------------|------------------------------------|
+| **Clause** | Art 6, **Art 11 removability**, labelling/CE |
+| **Market** | EU |
+| **Applies To** | Mini/Max/Base |
+| **Confidence** | CONFIRMED (removability INDICATIVE) |
+| **Verification note** | Applicable since 18 Aug 2025; **Art 11 end-user removability mandatory 18 Feb 2027**. ⚠️ LUUCIPet battery is NON-SWAPPABLE (§14.1) → **potential conflict** vs Art 11 within 2–3 yr market life. Verify small/sealed/IP-rated exemption. → Conflict Resolver + user. |
+
 
 ## C. Horizontal — Privacy / Cybersecurity
 
-| RM-ID   | Standard/Reg                           | Clause             | Market | Applies To    | Confidence                                | Verification note                                                                                                                   |
-| :------ | :------------------------------------- | :----------------- | :----- | :------------ | :---------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
-| RM-0015 | GDPR (EU) 2016/679                     | Art 5,25,32        | EU     | System        | CONFIRMED                                 | Owner PII + Max GNSS location = personal data.                                                                                      |
-| RM-0016 | UK GDPR + DPA 2018                     | —                  | UK     | System        | CONFIRMED                                 | —                                                                                                                                   |
-| RM-0017 | CCPA/CPRA                              | —                  | US-CA  | System        | INDICATIVE                                | Applies if thresholds met; ~5,000 units may not initially meet.                                                                    |
-| RM-0018 | PIPEDA                                 | —                  | CA     | System        | CONFIRMED                                 | —                                                                                                                                   |
-| RM-0019 | **ETSI EN 303 645:2025**               | Prov 5.1–5.13      | EU, UK | System        | CONFIRMED (version-corrected — PRD STALE) | 🔴 PRD cites V3.1.3; **EN 303 645:2025** now RED-harmonised & mandatory for EU (~1 Jul 2026). Cite :2025. Clause-level INDICATIVE. |
-| RM-0020 | RED Delegated Reg (EU) 2022/30         | Art 3.3(d)(e)(f)   | EU     | Mini/Max/Base | CONFIRMED (transitional)                  | Applicable 1 Aug 2025; being repealed in favor of CRA — align to CRA.                                                               |
-| RM-0021 | EU Cyber Resilience Act (EU) 2024/2847 | Annex I; Art 13–14 | EU     | System        | CONFIRMED                                 | Vuln reporting 11 Sep 2026; full 11 Dec 2027 (PRD dates correct).                                                                   |
-| RM-0022 | UK PSTI Act 2022 (+ SI 2023/1007)      | security schedule  | UK     | System        | CONFIRMED                                 | In force.                                                                                                                           |
-| RM-0023 | FCC Cyber Trust Mark                   | —                  | US     | System        | INDICATIVE                                | Voluntary.                                                                                                                          |
+| **RM-0015** | **GDPR (EU) 2016/679** |
+|-------------|------------------|
+| **Clause** | Art 5,25,32 |
+| **Market** | EU |
+| **Applies To** | System |
+| **Confidence** | CONFIRMED |
+| **Verification note** | Owner PII + Max GNSS location = personal data. |
+
+| **RM-0016** | **UK GDPR + DPA 2018** |
+|-------------|------------------|
+| **Clause** | — |
+| **Market** | UK |
+| **Applies To** | System |
+| **Confidence** | CONFIRMED |
+| **Verification note** | — |
+
+| **RM-0017** | **CCPA/CPRA** |
+|-------------|----------|
+| **Clause** | — |
+| **Market** | US-CA |
+| **Applies To** | System |
+| **Confidence** | INDICATIVE |
+| **Verification note** | Applies if thresholds met; ~5,000 units may not initially meet. |
+
+| **RM-0018** | **PIPEDA** |
+|-------------|----------|
+| **Clause** | — |
+| **Market** | CA |
+| **Applies To** | System |
+| **Confidence** | CONFIRMED |
+| **Verification note** | — |
+
+| **RM-0019** | ****ETSI EN 303 645:2025**** |
+|-------------|------------------------|
+| **Clause** | Prov 5.1–5.13 |
+| **Market** | EU, UK |
+| **Applies To** | System |
+| **Confidence** | CONFIRMED (version-corrected — PRD STALE) |
+| **Verification note** | 🔴 PRD cites V3.1.3; **EN 303 645:2025** now RED-harmonised & mandatory for EU (~1 Jul 2026). Cite :2025. Clause-level INDICATIVE. |
+
+| **RM-0020** | **RED Delegated Reg (EU) 2022/30** |
+|-------------|------------------------------|
+| **Clause** | Art 3.3(d)(e)(f) |
+| **Market** | EU |
+| **Applies To** | Mini/Max/Base |
+| **Confidence** | CONFIRMED (transitional) |
+| **Verification note** | Applicable 1 Aug 2025; being repealed in favor of CRA — align to CRA. |
+
+| **RM-0021** | **EU Cyber Resilience Act (EU) 2024/2847** |
+|-------------|--------------------------------------|
+| **Clause** | Annex I; Art 13–14 |
+| **Market** | EU |
+| **Applies To** | System |
+| **Confidence** | CONFIRMED |
+| **Verification note** | Vuln reporting 11 Sep 2026; full 11 Dec 2027 (PRD dates correct). |
+
+| **RM-0022** | **UK PSTI Act 2022 (+ SI 2023/1007)** |
+|-------------|---------------------------------|
+| **Clause** | security schedule |
+| **Market** | UK |
+| **Applies To** | System |
+| **Confidence** | CONFIRMED |
+| **Verification note** | In force. |
+
+| **RM-0023** | **FCC Cyber Trust Mark** |
+|-------------|--------------------|
+| **Clause** | — |
+| **Market** | US |
+| **Applies To** | System |
+| **Confidence** | INDICATIVE |
+| **Verification note** | Voluntary. |
+
 
 ## D. Horizontal — Materials / Environmental / Ingress / Product Safety
 
-| RM-ID       | Standard/Reg                                                             | Clause                                                                                                                                      | Market        | Applies To             | Confidence                    | Verification note                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| :---------- | :----------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------ | :------------ | :--------------------- | :---------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| RM-0024     | EU GPSR (EU) 2023/988                                                    | Art 5, **Art 6**                                                                                                                            | EU            | System + CCF           | CONFIRMED                     | Applicable 13 Dec 2024. Underpins Zone-2 breakaway safety case; supports A-0002/A-0010 design duty.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| **RM-0031** | EU GPSR (EU) 2023/988 — design-level strangulation-mitigation branch     | **Art 6(1)(a)**  [assessment: product characteristics/design] READ WITH Art 5 [general safety req] & Recital 22 [design-first hierarchy] | EU            | CCF (Zone 2 breakaway) | **INDICATIVE-pending-DVT**    | Refines RM-0024 for the specific claim (PRD §14.2/§10.1.4) that the compound-CCF breakaway = design-level strangulation mitigation. Applicability CONFIRMED (Tier-1 EUR-Lex CELEX:32023R0988). CITATION-PRECISION: obligation is Art 5; Art 6(1)(a) is assessment criteria — cite BOTH, not Art 6(1) alone. Efficacy INDICATIVE-pending-DVT: unproven esp. feline SKU (A-0014 airway caveat + CCF-L retention-floor overlap). Substantiation needed: DVT breakaway-force testing to SKU windows + feline-airway validation + documented GPSR Art 9 risk-assessment file. Supporting animal-collar-release std = ASTM F2056 per RM-0030 (NOT ASTM F2727 — miscitation resolved in RM-0030). Distinct from A-0013 (Battery Reg Art 11) — not conflated. New assumption A-0017 issued to carry this framing. |
-| RM-0025     | UK GPSR 2005 / US CPSA                                                   | —                                                                                                                                           | UK, US        | System + CCF           | CONFIRMED                     | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| RM-0026     | REACH (EC)1907/2006 · RoHS 2011/65/EU + 2015/863 · CA Prop 65            | REACH Annex XVII; RoHS Annex II                                                                                                             | EU, UK, US-CA | device + CCF           | CONFIRMED                     | Animal-contact materials; no chrome/nickel.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| RM-0027     | WEEE 2012/19/EU · EU PPWR · UK Producer Responsibility                   | —                                                                                                                                           | EU, UK        | System + packaging     | CONFIRMED                     | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| RM-0028     | IEC 60529 (IP67) + IEC 60068-2-1/-2-2/-2-5/-2-14/-2-27/-2-64/-2-68/-2-78 | ingress + env test                                                                                                                          | Global        | Mini/Max/CCF           | CONFIRMED (clause INDICATIVE) | Supports A-0003 (60068-2-14 Test Na thermal cycling — CONFIRMED appropriate basis).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **RM-0024** | **EU GPSR (EU) 2023/988** |
+|-------------|---------------------|
+| **Clause** | Art 5, **Art 6** |
+| **Market** | EU |
+| **Applies To** | System + CCF |
+| **Confidence** | CONFIRMED |
+| **Verification note** | Applicable 13 Dec 2024. Underpins Zone-2 breakaway safety case; supports A-0002/A-0010 design duty. |
+
+| ****RM-0031**** | **EU GPSR (EU) 2023/988 — design-level strangulation-mitigation branch** |
+|-------------|--------------------------------------------------------------------|
+| **Clause** | **Art 6(1)(a)**  [assessment: product characteristics/design] READ WITH Art 5 [general safety req] & Recital 22 [design-first hierarchy] |
+| **Market** | EU |
+| **Applies To** | CCF (Zone 2 breakaway) |
+| **Confidence** | **INDICATIVE-pending-DVT** |
+| **Verification note** | Refines RM-0024 for the specific claim (PRD §14.2/§10.1.4) that the compound-CCF breakaway = design-level strangulation mitigation. Applicability CONFIRMED (Tier-1 EUR-Lex CELEX:32023R0988). CITATION-PRECISION: obligation is Art 5; Art 6(1)(a) is assessment criteria — cite BOTH, not Art 6(1) alone. Efficacy INDICATIVE-pending-DVT: unproven esp. feline SKU (A-0014 airway caveat + CCF-L retention-floor overlap). Substantiation needed: DVT breakaway-force testing to SKU windows + feline-airway validation + documented GPSR Art 9 risk-assessment file. Supporting animal-collar-release std = ASTM F2056 per RM-0030 (NOT ASTM F2727 — miscitation resolved in RM-0030). Distinct from A-0013 (Battery Reg Art 11) — not conflated. New assumption A-0017 issued to carry this framing. |
+
+| **RM-0025** | **UK GPSR 2005 / US CPSA** |
+|-------------|----------------------|
+| **Clause** | — |
+| **Market** | UK, US |
+| **Applies To** | System + CCF |
+| **Confidence** | CONFIRMED |
+| **Verification note** | — |
+
+| **RM-0026** | **REACH (EC)1907/2006 · RoHS 2011/65/EU + 2015/863 · CA Prop 65** |
+|-------------|-------------------------------------------------------------|
+| **Clause** | REACH Annex XVII; RoHS Annex II |
+| **Market** | EU, UK, US-CA |
+| **Applies To** | device + CCF |
+| **Confidence** | CONFIRMED |
+| **Verification note** | Animal-contact materials; no chrome/nickel. |
+
+| **RM-0027** | **WEEE 2012/19/EU · EU PPWR · UK Producer Responsibility** |
+|-------------|------------------------------------------------------|
+| **Clause** | — |
+| **Market** | EU, UK |
+| **Applies To** | System + packaging |
+| **Confidence** | CONFIRMED |
+| **Verification note** | — |
+
+| **RM-0028** | **IEC 60529 (IP67) + IEC 60068-2-1/-2-2/-2-5/-2-14/-2-27/-2-64/-2-68/-2-78** |
+|-------------|------------------------------------------------------------------------|
+| **Clause** | ingress + env test |
+| **Market** | Global |
+| **Applies To** | Mini/Max/CCF |
+| **Confidence** | CONFIRMED (clause INDICATIVE) |
+| **Verification note** | Supports A-0003 (60068-2-14 Test Na thermal cycling — CONFIRMED appropriate basis). |
+
 
 ## E. Vertical Scan
 
