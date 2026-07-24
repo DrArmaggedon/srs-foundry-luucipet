@@ -139,7 +139,40 @@ def extract_drafter_notes(text):
 
 
 def extract_prose_and_reqs(text):
-    """Split section body into prose paragraphs and requirement blocks."""
+    """Split section body into prose paragraphs and requirement blocks.
+    v3: Added table-format parsing for markdown table rows.
+    """
+    # PHASE 0: Convert markdown table rows to pipe-delimited format
+    # Pattern: | **SRS-XXX-NNNN** | Statement... | CAT=XX PRIORITY=XX STABILITY=XX VM=XX Source: [...] XR: [...] |
+    table_pattern = re.compile(r'^\|\s*\*\*(SRS-\w+-\d+)\*\*\s*\|\s*(.+?)\s*\|\s*(.+?)\s*\|', re.MULTILINE)
+    for m in table_pattern.finditer(text):
+        rid = m.group(1)
+        statement = m.group(2).strip()
+        attrs = m.group(3).strip()
+        priority = 'Medium'
+        pri_m = re.search(r'PRIORITY\s*=\s*(CRITICAL|HIGH|MEDIUM|LOW)', attrs, re.IGNORECASE)
+        if pri_m: priority = pri_m.group(1).capitalize()
+        stability = 'Stable'
+        stab_m = re.search(r'STABILITY\s*=\s*(STABLE|FIXED|LIKELY-CHANGE|VOLATILE)', attrs, re.IGNORECASE)
+        if stab_m:
+            raw = stab_m.group(1).upper()
+            stability = 'Stable' if raw in ('STABLE', 'FIXED') else ('Volatile' if raw in ('LIKELY-CHANGE', 'VOLATILE') else 'Stable')
+        vm = 'Inspection'
+        vm_m = re.search(r'\*\*VM\s*=\s*(Test|Analysis|Demonstration|Inspection)\*\*', attrs)
+        if not vm_m: vm_m = re.search(r'VM\s*=\s*(Test|Analysis|Demonstration|Inspection)', attrs)
+        if vm_m: vm = vm_m.group(1)
+        source = ''
+        src_list = re.findall(r'\[(PRD\s+[^\]]+|STD:\s*[^\]]+)\]', attrs)
+        if src_list: source = ' '.join(f'[{s}]' for s in src_list)
+        rationale = ''
+        rat_m = re.search(r'Rationale:\s*(.+?)(?:\s*\||\s*$)', attrs)
+        if rat_m: rationale = rat_m.group(1).strip()
+        xr = ''
+        xr_m = re.search(r'\*\*XR:\s*(.+?)\*\*', attrs)
+        if xr_m: xr = xr_m.group(1).strip()
+        title_short = statement[:80] + ('...' if len(statement) > 80 else '')
+        converted = f'**{rid}** | {title_short} | {statement} | Priority: {priority} | Stability: {stability} | Source: {source} | Rationale: {rationale} | Verification Method: {vm} | Cross-References: {xr}'
+        text = text.replace(m.group(0), converted)
     # Convert ```plain blocks to pipe-delimited format
     for m in re.finditer(r"```plain\s*\n(.+?)```", text, re.DOTALL):
         block = m.group(1)

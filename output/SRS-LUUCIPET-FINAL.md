@@ -4206,55 +4206,31 @@ This section specifies the dependability, availability, and long-run success-rat
 
 | ID              | Requirement                                                                                                                                                                                                                                                                      | Attributes                                                                                                   |
 | :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------- |
-| **SRS-UX-0001** | The collar device shall complete BLE pairing and first-data-sync handshake with a companion app within 3 minutes of the user initiating pairing mode on the device, measured from pairing-mode-entry LED indication to app-confirmed-paired acknowledgment.                      | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test Source: \[PRD §12.4]                                            |
-| **SRS-UX-0002** | The collar device shall support QR-code-based out-of-band (OOB) pairing as the primary pairing method, providing a scannable QR code (on device label or base-station label) that encodes the device identity for LE Secure Connections OOB pairing.                             | CAT=UX PRIORITY=HIGH STABILITY=FIXED **VM=Demonstration** Source: \[PRD §5.6] \[STD: Bluetooth SIG LE Secure Connections] **XR: SRS-CONN-0003** |
-| **SRS-UX-0003** | The collar device shall provide a single, visually distinct, and user-accessible physical mechanism (e.g., a recessed or guarded button) to initiate pairing mode, with the mechanism clearly labeled or icon-indicated on the device enclosure.                                 | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Inspection Source: \[PRD §5.6]                                       |
-| **SRS-UX-0004** | The collar device LED shall emit a visually distinct indication when the device is in pairing mode (e.g., slow blue blink at 1 Hz, 50% duty cycle) that is distinguishable from all power-on/boot, normal-operation, low-battery, charging, fault, and OTA-state LED patterns defined in §14.3. | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test                                                                 |
-| **SRS-UX-0005** | The collar device shall automatically exit pairing mode and revert to normal-operation LED indication after 3 minutes if no successful pairing is completed, with no user action required.                                                                                       | CAT=UX PRIORITY=MEDIUM STABILITY=FIXED VM=Test                                                               |
 
 ### 14.2 Physical Interaction
 
 | ID              | Requirement                                                                                                                                                                                                                                                             | Attributes                                                               |
 | :-------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------- |
-| **SRS-UX-0006** | The Twist-Lock mechanism shall provide both an audible click and a tactile force-transition (detent drop) upon successful locking, enabling the user to confirm engagement by sound and feel without visual inspection.                                                 | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test Source: \[PRD §10.1.3.2a]   |
-| **SRS-UX-0007** | The Twist-Lock socket shall provide a magnetic-assist force that draws the device into correct alignment from a distance of ≤5 mm before the lug channels engage, reducing the fine-motor-skill demand of device docking.                                               | CAT=UX PRIORITY=MEDIUM STABILITY=FIXED VM=Test Source: \[PRD §10.1.3.2a] |
-| **SRS-UX-0008** | The Twist-Lock engage force shall not exceed 5 N press-in axial force and 0.10 N·m rotational torque, enabling a typical adult user to dock the device without a tool or excessive effort. Mechanical specification per §11.                                            | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test Source: \[PRD §10.1.3.2a]   |
-| **SRS-UX-0009** | The device removal workflow (90° counter-clockwise Twist-Lock rotation) shall require a detent-release torque not exceeding 0.15 N·m, such that an adult user can intentionally remove the device without a tool while the mechanism remains inertially immune per §11. | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test Source: \[PRD §10.1.3.2a]   |
-| **SRS-UX-0010** | The magnetic pogo-pin charging connector shall achieve ≥90% first-attempt successful seating rate by a user with no prior training, measured in a usability test with a representative sample of ≥20 adult participants across age and dexterity ranges.                | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test Source: \[PRD §10.1.3.5]    |
-| **SRS-UX-0011** | The Twist-Lock asymmetric lug keying shall physically prevent incorrect-orientation insertion of the device into the CCF socket, providing error-proof (poka-yoke) mating.                                                                                              | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test Source: \[PRD §10.1.3.2a]   |
 
 ### 14.3 Visual & Auditory Feedback
 
 | ID              | Requirement                                                                                                                                                                                                                                                                                                                                              | Attributes                                         |
 | :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------- |
-| **SRS-UX-0012** | The collar device LED shall communicate at minimum the following distinct operational states to the user: (a) power-on / boot, (b) pairing mode, (c) normal operation, (d) low battery (≤20% SoC), (e) charging / docked, (f) error or fault, and (g) OTA update in progress. LED physical specification per §11.                                        | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test       |
-| **SRS-UX-0013** | Each collar-device operational state enumerated in SRS-UX-0012 shall be communicated via a unique combination of LED color, blink cadence, or duty cycle, such that no two states share an identical visual indicator pattern.                                                                                                                           | CAT=UX **PRIORITY=HIGH** STABILITY=FIXED VM=Test     |
-| **SRS-UX-0014** | All collar-device LED state indicators shall differentiate critical states (low battery, error/fault) from non-critical states using at minimum temporal-pattern differentiation (blink cadence), ensuring distinguishability under protanopia and deuteranopia (red/green color-blindness) without reliance on red-vs-green color discrimination alone. | CAT=UX PRIORITY=MEDIUM STABILITY=FIXED VM=Analysis |
-| **SRS-UX-0015** | The Twist-Lock engagement audible click shall produce a sound pressure level of ≥40 dBA measured at 30 cm from the device in a quiet-room baseline (ambient ≤30 dBA), ensuring a typical adult user can confirm engagement by sound.                                                                                                                     | CAT=UX PRIORITY=MEDIUM STABILITY=FIXED VM=Test     |
 
 ### 14.4 Base Station UX
 
 | ID              | Requirement                                                                                                                                                                                                                                                                        | Attributes                                                                             |
 | :-------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------- |
-| **SRS-UX-0016** | The base station shall communicate via LEDs at minimum: (a) AC power present, (b) device charging active (Charging tier only), (c) cloud connectivity established, and (d) OTA update in progress.                                                                                 | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test Source: \[PRD §11.6]                      |
-| **SRS-UX-0017** | The base station LEDs should support an automatic ambient-light-responsive dimming mode below approximately 50 lux, or a user-configurable quiet-hours schedule, to reduce bedroom/nighttime light intrusion.                                                                      | CAT=UX PRIORITY=LOW STABILITY=FIXED VM=Test Source: \[PRD §11.6] \[ASSUMPTION: A-0008] |
-| **SRS-UX-0018** | The base station initial setup — from AC power-on through Wi-Fi association and cloud-registration to the "cloud-connected" LED indication — shall complete within 5 minutes for a user following the companion app's guided setup flow, assuming compliant home Wi-Fi per A-0009. | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test Source: \[PRD §12.4]                      |
 
 ### 14.5 CCF User Experience
 
 | ID              | Requirement                                                                                                                                                                                                                                                                                                                                                                                                       | Attributes                                                                              |
 | :-------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------- |
-| **SRS-UX-0019** | Each CCF variant (CCF-S, CCF-M, CCF-L, and their -RC/-MG collar-type sub-variants) shall be visually and/or tactilely distinguishable from all other variants by at minimum one of: molded-in size designation, distinct body color, or tactile surface differentiation, enabling a user to identify the correct CCF for their pet without measurement tools.                                                     | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Inspection Source: \[PRD §12.4]                 |
-| **SRS-UX-0020** | The CCF Zone 1 structural-clamp installation onto a third-party collar shall be achievable by a typical adult user in ≤60 seconds without tools, using only the wrap-and-lock mechanism described in PRD §10.1.3.4.                                                                                                                                                                                               | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test Source: \[PRD §12.4]                       |
-| **SRS-UX-0021** | The CCF Zone 2 fuse tab shall incorporate a clearly visible fracture indicator (e.g., a contrasting-color internal layer exposed on fracture, or a continuous visual element that visibly separates) that is discernible by a user at arm's length (approximately 60 cm) under typical indoor lighting without magnification, enabling the user to visually confirm post-breakaway that the CCF must be replaced. | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Inspection Source: \[PRD §10.1.3.2b] \[PRD §10.1.3.6] |
 
 ### 14.6 Status & Error Communication
 
 | ID              | Requirement                                                                                                                                                                                                                                                                                                                   | Attributes                                                        |
 | :-------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
-| **SRS-UX-0022** | The collar device shall provide a distinct low-battery LED indication (visually distinct from normal operation per SRS-UX-0013) when the battery state-of-charge reaches ≤20%, and shall persist this indication in every operational state until the device is placed on the charger and charging is confirmed.              | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test Source: \[PRD §10.4] |
-| **SRS-UX-0023** | The collar device shall communicate a fault state (including but not limited to: sensor failure, non-volatile memory corruption, BLE radio initialization failure) via a visually distinct LED pattern that differs from all power-on/boot, normal-operation, low-battery, pairing, charging, and OTA-state patterns.                        | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test                      |
-| **SRS-UX-0024** | The collar device shall provide confirmation feedback (LED flash, haptic pulse, or both) within 1 second of a user-initiated physical action (e.g., pairing-mode button press, factory-reset trigger) being successfully registered by the device firmware, so the user is not left uncertain whether the input was received. | CAT=UX PRIORITY=MEDIUM STABILITY=FIXED VM=Test                    |
 
 ### 14.7 App-Interface Obligations
 
@@ -4262,16 +4238,11 @@ This section specifies the dependability, availability, and long-run success-rat
 
 | ID              | Requirement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Attributes                                                                                               |
 | :-------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------- |
-| **SRS-UX-0025** | The collar device shall include its current battery state-of-charge as a percentage value (0–100) in every sync payload transmitted to the base station, enabling the companion app to display an accurate, real-time battery estimate to the owner.                                                                                                                                                                                                                                                | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test Source: \[PRD §12.4]                                        |
-| **SRS-UX-0026** | The Max collar device shall include the current GNSS fix interval setting (in minutes) in its status payload transmitted in every sync, enabling the companion app to compute and display an interval-aware battery-life estimate and to issue the Max <10-day battery warning.                                                                                                                                                                                                                     | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test Source: \[PRD §12.4]                                        |
-| **SRS-UX-0027** | The collar device shall transmit a persistent breakaway/separation event record as defined in A-0018, flagged with elevated transmission priority, on the next successful base-station contact following a breakaway event, enabling the companion app's "CCF Replacement Required" owner notification. The primary post-breakaway safety mitigation remains the passive CCF visible fracture indicator per SRS-UX-0021; the electronic notification is a secondary, best-effort notification only. | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test Source: \[PRD §10.1.3.6] \[PRD §12.4] \[ASSUMPTION: A-0018] |
 
 ### 14.8 OTA Update UX
 
 | ID              | Requirement                                                                                                                                                                                                                                                                                                                                        | Attributes                                                       |
 | :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------- |
-| **SRS-UX-0028** | The collar device shall communicate each distinct OTA update state — Downloading, Verifying, Pending Installation, Installing, Success, and Failed — via a unique LED pattern distinguishable from all other LED states defined in §14.3, enabling the user to understand update progress without the companion app. OTA functional states per §5. | CAT=UX PRIORITY=HIGH STABILITY=FIXED VM=Test Source: \[PRD §9.5] |
-| **SRS-UX-0029** | The collar device LED shall remain continuously active during an OTA update, with no dark (LED-off) period exceeding 10 seconds during any OTA state expected to last >30 seconds, preventing the user from misinterpreting a prolonged dark period as a device failure or bricked state.                                                          | CAT=UX PRIORITY=MEDIUM STABILITY=FIXED VM=Test                   |
 
 ### Summary
 
@@ -4289,6 +4260,387 @@ This section specifies the dependability, availability, and long-run success-rat
 | VM: Demonstration    | 1 (SRS-UX-0002)                                       |
 | EXTERNAL attribution | Mobile App team                                       |
 | ID range consumed    | SRS-UX-0001 – SRS-UX-0029                             |
+
+
+| ID | Short Title | Priority | Stability | Verification |
+|----|-------------|----------|-----------|--------------|
+| SRS-UX-0001 | The collar device shall complete BLE pairing and first- | High | Stable | Test |
+| SRS-UX-0002 | The collar device shall support QR-code-based out-of-ba | High | Stable | Demonstration |
+| SRS-UX-0003 | The collar device shall provide a single, visually dist | High | Stable | Inspection |
+| SRS-UX-0004 | The collar device LED shall emit a visually distinct in | High | Stable | Test |
+| SRS-UX-0005 | The collar device shall automatically exit pairing mode | Medium | Stable | Test |
+| SRS-UX-0006 | The Twist-Lock mechanism shall provide both an audible  | High | Stable | Test |
+| SRS-UX-0007 | The Twist-Lock socket shall provide a magnetic-assist f | Medium | Stable | Test |
+| SRS-UX-0008 | The Twist-Lock engage force shall not exceed 5 N press- | High | Stable | Test |
+| SRS-UX-0009 | The device removal workflow (90° counter-clockwise Twis | High | Stable | Test |
+| SRS-UX-0010 | The magnetic pogo-pin charging connector shall achieve  | High | Stable | Test |
+| SRS-UX-0011 | The Twist-Lock asymmetric lug keying shall physically p | High | Stable | Test |
+| SRS-UX-0012 | The collar device LED shall communicate at minimum the  | High | Stable | Test |
+| SRS-UX-0013 | Each collar-device operational state enumerated in SRS- | High | Stable | Test |
+| SRS-UX-0014 | All collar-device LED state indicators shall differenti | Medium | Stable | Analysis |
+| SRS-UX-0015 | The Twist-Lock engagement audible click shall produce a | Medium | Stable | Test |
+| SRS-UX-0016 | The base station shall communicate via LEDs at minimum: | High | Stable | Test |
+| SRS-UX-0017 | The base station LEDs should support an automatic ambie | Low | Stable | Test |
+| SRS-UX-0018 | The base station initial setup — from AC power-on throu | High | Stable | Test |
+| SRS-UX-0019 | Each CCF variant (CCF-S, CCF-M, CCF-L, and their -RC/-M | High | Stable | Inspection |
+| SRS-UX-0020 | The CCF Zone 1 structural-clamp installation onto a thi | High | Stable | Test |
+| SRS-UX-0021 | The CCF Zone 2 fuse tab shall incorporate a clearly vis | High | Stable | Inspection |
+| SRS-UX-0022 | The collar device shall provide a distinct low-battery  | High | Stable | Test |
+| SRS-UX-0023 | The collar device shall communicate a fault state (incl | High | Stable | Test |
+| SRS-UX-0024 | The collar device shall provide confirmation feedback ( | Medium | Stable | Test |
+| SRS-UX-0025 | The collar device shall include its current battery sta | High | Stable | Test |
+| SRS-UX-0026 | The Max collar device shall include the current GNSS fi | High | Stable | Test |
+| SRS-UX-0027 | The collar device shall transmit a persistent breakaway | High | Stable | Test |
+| SRS-UX-0028 | The collar device shall communicate each distinct OTA u | High | Stable | Test |
+| SRS-UX-0029 | The collar device LED shall remain continuously active  | Medium | Stable | Test |
+
+
+<a id="srs-ux-0001"></a>
+
+| **SRS-UX-0001** | **The collar device shall complete BLE pairing and first-data-sync handshake with ...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The collar device shall complete BLE pairing and first-data-sync handshake with a companion app within 3 minutes of the user initiating pairing mode on the device, measured from pairing-mode-entry LED indication to app-confirmed-paired acknowledgment. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §12.4] |
+
+
+<a id="srs-ux-0002"></a>
+
+| **SRS-UX-0002** | **The collar device shall support QR-code-based out-of-band (OOB) pairing as the p...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The collar device shall support QR-code-based out-of-band (OOB) pairing as the primary pairing method, providing a scannable QR code (on device label or base-station label) that encodes the device identity for LE Secure Connections OOB pairing. |
+| **Rationale** |  |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Demonstration |
+| **Traceability** | SRS-CONN-0003 |
+
+
+<a id="srs-ux-0003"></a>
+
+| **SRS-UX-0003** | **The collar device shall provide a single, visually distinct, and user-accessible...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The collar device shall provide a single, visually distinct, and user-accessible physical mechanism (e.g., a recessed or guarded button) to initiate pairing mode, with the mechanism clearly labeled or icon-indicated on the device enclosure. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Inspection |
+| **Traceability** | [PRD §5.6] |
+
+
+<a id="srs-ux-0004"></a>
+
+| **SRS-UX-0004** | **The collar device LED shall emit a visually distinct indication when the device ...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The collar device LED shall emit a visually distinct indication when the device is in pairing mode (e.g., slow blue blink at 1 Hz, 50% duty cycle) that is distinguishable from all power-on/boot, normal-operation, low-battery, charging, fault, and OTA-state LED patterns defined in §14.3. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** |  |
+
+
+<a id="srs-ux-0005"></a>
+
+| **SRS-UX-0005** | **The collar device shall automatically exit pairing mode and revert to normal-ope...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The collar device shall automatically exit pairing mode and revert to normal-operation LED indication after 3 minutes if no successful pairing is completed, with no user action required. |
+| **Rationale** | | Cross-References: |
+| **Priority** | Medium |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** |  |
+
+
+<a id="srs-ux-0006"></a>
+
+| **SRS-UX-0006** | **The Twist-Lock mechanism shall provide both an audible click and a tactile force...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The Twist-Lock mechanism shall provide both an audible click and a tactile force-transition (detent drop) upon successful locking, enabling the user to confirm engagement by sound and feel without visual inspection. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §10.1.3.2a] |
+
+
+<a id="srs-ux-0007"></a>
+
+| **SRS-UX-0007** | **The Twist-Lock socket shall provide a magnetic-assist force that draws the devic...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The Twist-Lock socket shall provide a magnetic-assist force that draws the device into correct alignment from a distance of ≤5 mm before the lug channels engage, reducing the fine-motor-skill demand of device docking. |
+| **Rationale** | | Cross-References: |
+| **Priority** | Medium |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §10.1.3.2a] |
+
+
+<a id="srs-ux-0008"></a>
+
+| **SRS-UX-0008** | **The Twist-Lock engage force shall not exceed 5 N press-in axial force and 0.10 N...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The Twist-Lock engage force shall not exceed 5 N press-in axial force and 0.10 N·m rotational torque, enabling a typical adult user to dock the device without a tool or excessive effort. Mechanical specification per §11. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §10.1.3.2a] |
+
+
+<a id="srs-ux-0009"></a>
+
+| **SRS-UX-0009** | **The device removal workflow (90° counter-clockwise Twist-Lock rotation) shall re...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The device removal workflow (90° counter-clockwise Twist-Lock rotation) shall require a detent-release torque not exceeding 0.15 N·m, such that an adult user can intentionally remove the device without a tool while the mechanism remains inertially immune per §11. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §10.1.3.2a] |
+
+
+<a id="srs-ux-0010"></a>
+
+| **SRS-UX-0010** | **The magnetic pogo-pin charging connector shall achieve ≥90% first-attempt succes...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The magnetic pogo-pin charging connector shall achieve ≥90% first-attempt successful seating rate by a user with no prior training, measured in a usability test with a representative sample of ≥20 adult participants across age and dexterity ranges. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §10.1.3.5] |
+
+
+<a id="srs-ux-0011"></a>
+
+| **SRS-UX-0011** | **The Twist-Lock asymmetric lug keying shall physically prevent incorrect-orientat...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The Twist-Lock asymmetric lug keying shall physically prevent incorrect-orientation insertion of the device into the CCF socket, providing error-proof (poka-yoke) mating. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §10.1.3.2a] |
+
+
+<a id="srs-ux-0012"></a>
+
+| **SRS-UX-0012** | **The collar device LED shall communicate at minimum the following distinct operat...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The collar device LED shall communicate at minimum the following distinct operational states to the user: (a) power-on / boot, (b) pairing mode, (c) normal operation, (d) low battery (≤20% SoC), (e) charging / docked, (f) error or fault, and (g) OTA update in progress. LED physical specification per §11. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** |  |
+
+
+<a id="srs-ux-0013"></a>
+
+| **SRS-UX-0013** | **Each collar-device operational state enumerated in SRS-UX-0012 shall be communic...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | Each collar-device operational state enumerated in SRS-UX-0012 shall be communicated via a unique combination of LED color, blink cadence, or duty cycle, such that no two states share an identical visual indicator pattern. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** |  |
+
+
+<a id="srs-ux-0014"></a>
+
+| **SRS-UX-0014** | **All collar-device LED state indicators shall differentiate critical states (low ...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | All collar-device LED state indicators shall differentiate critical states (low battery, error/fault) from non-critical states using at minimum temporal-pattern differentiation (blink cadence), ensuring distinguishability under protanopia and deuteranopia (red/green color-blindness) without reliance on red-vs-green color discrimination alone. |
+| **Rationale** | | Cross-References: |
+| **Priority** | Medium |
+| **Stability** | Stable |
+| **Verification** | Analysis |
+| **Traceability** |  |
+
+
+<a id="srs-ux-0015"></a>
+
+| **SRS-UX-0015** | **The Twist-Lock engagement audible click shall produce a sound pressure level of ...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The Twist-Lock engagement audible click shall produce a sound pressure level of ≥40 dBA measured at 30 cm from the device in a quiet-room baseline (ambient ≤30 dBA), ensuring a typical adult user can confirm engagement by sound. |
+| **Rationale** | | Cross-References: |
+| **Priority** | Medium |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** |  |
+
+
+<a id="srs-ux-0016"></a>
+
+| **SRS-UX-0016** | **The base station shall communicate via LEDs at minimum: (a) AC power present, (b...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The base station shall communicate via LEDs at minimum: (a) AC power present, (b) device charging active (Charging tier only), (c) cloud connectivity established, and (d) OTA update in progress. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §11.6] |
+
+
+<a id="srs-ux-0017"></a>
+
+| **SRS-UX-0017** | **The base station LEDs should support an automatic ambient-light-responsive dimmi...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The base station LEDs should support an automatic ambient-light-responsive dimming mode below approximately 50 lux, or a user-configurable quiet-hours schedule, to reduce bedroom/nighttime light intrusion. |
+| **Rationale** | | Cross-References: |
+| **Priority** | Low |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §11.6] |
+
+
+<a id="srs-ux-0018"></a>
+
+| **SRS-UX-0018** | **The base station initial setup — from AC power-on through Wi-Fi association and ...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The base station initial setup — from AC power-on through Wi-Fi association and cloud-registration to the "cloud-connected" LED indication — shall complete within 5 minutes for a user following the companion app's guided setup flow, assuming compliant home Wi-Fi per A-0009. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §12.4] |
+
+
+<a id="srs-ux-0019"></a>
+
+| **SRS-UX-0019** | **Each CCF variant (CCF-S, CCF-M, CCF-L, and their -RC/-MG collar-type sub-variant...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | Each CCF variant (CCF-S, CCF-M, CCF-L, and their -RC/-MG collar-type sub-variants) shall be visually and/or tactilely distinguishable from all other variants by at minimum one of: molded-in size designation, distinct body color, or tactile surface differentiation, enabling a user to identify the correct CCF for their pet without measurement tools. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Inspection |
+| **Traceability** | [PRD §12.4] |
+
+
+<a id="srs-ux-0020"></a>
+
+| **SRS-UX-0020** | **The CCF Zone 1 structural-clamp installation onto a third-party collar shall be ...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The CCF Zone 1 structural-clamp installation onto a third-party collar shall be achievable by a typical adult user in ≤60 seconds without tools, using only the wrap-and-lock mechanism described in PRD §10.1.3.4. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §12.4] |
+
+
+<a id="srs-ux-0021"></a>
+
+| **SRS-UX-0021** | **The CCF Zone 2 fuse tab shall incorporate a clearly visible fracture indicator (...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The CCF Zone 2 fuse tab shall incorporate a clearly visible fracture indicator (e.g., a contrasting-color internal layer exposed on fracture, or a continuous visual element that visibly separates) that is discernible by a user at arm's length (approximately 60 cm) under typical indoor lighting without magnification, enabling the user to visually confirm post-breakaway that the CCF must be replaced. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Inspection |
+| **Traceability** | [PRD §10.1.3.2b] [PRD §10.1.3.6] |
+
+
+<a id="srs-ux-0022"></a>
+
+| **SRS-UX-0022** | **The collar device shall provide a distinct low-battery LED indication (visually ...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The collar device shall provide a distinct low-battery LED indication (visually distinct from normal operation per SRS-UX-0013) when the battery state-of-charge reaches ≤20%, and shall persist this indication in every operational state until the device is placed on the charger and charging is confirmed. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §10.4] |
+
+
+<a id="srs-ux-0023"></a>
+
+| **SRS-UX-0023** | **The collar device shall communicate a fault state (including but not limited to:...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The collar device shall communicate a fault state (including but not limited to: sensor failure, non-volatile memory corruption, BLE radio initialization failure) via a visually distinct LED pattern that differs from all power-on/boot, normal-operation, low-battery, pairing, charging, and OTA-state patterns. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** |  |
+
+
+<a id="srs-ux-0024"></a>
+
+| **SRS-UX-0024** | **The collar device shall provide confirmation feedback (LED flash, haptic pulse, ...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The collar device shall provide confirmation feedback (LED flash, haptic pulse, or both) within 1 second of a user-initiated physical action (e.g., pairing-mode button press, factory-reset trigger) being successfully registered by the device firmware, so the user is not left uncertain whether the input was received. |
+| **Rationale** | | Cross-References: |
+| **Priority** | Medium |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** |  |
+
+
+<a id="srs-ux-0025"></a>
+
+| **SRS-UX-0025** | **The collar device shall include its current battery state-of-charge as a percent...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The collar device shall include its current battery state-of-charge as a percentage value (0–100) in every sync payload transmitted to the base station, enabling the companion app to display an accurate, real-time battery estimate to the owner. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §12.4] |
+
+
+<a id="srs-ux-0026"></a>
+
+| **SRS-UX-0026** | **The Max collar device shall include the current GNSS fix interval setting (in mi...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The Max collar device shall include the current GNSS fix interval setting (in minutes) in its status payload transmitted in every sync, enabling the companion app to compute and display an interval-aware battery-life estimate and to issue the Max <10-day battery warning. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §12.4] |
+
+
+<a id="srs-ux-0027"></a>
+
+| **SRS-UX-0027** | **The collar device shall transmit a persistent breakaway/separation event record ...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The collar device shall transmit a persistent breakaway/separation event record as defined in A-0018, flagged with elevated transmission priority, on the next successful base-station contact following a breakaway event, enabling the companion app's "CCF Replacement Required" owner notification. The primary post-breakaway safety mitigation remains the passive CCF visible fracture indicator per SRS-UX-0021; the electronic notification is a secondary, best-effort notification only. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §10.1.3.6] [PRD §12.4] |
+
+
+<a id="srs-ux-0028"></a>
+
+| **SRS-UX-0028** | **The collar device shall communicate each distinct OTA update state — Downloading...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The collar device shall communicate each distinct OTA update state — Downloading, Verifying, Pending Installation, Installing, Success, and Failed — via a unique LED pattern distinguishable from all other LED states defined in §14.3, enabling the user to understand update progress without the companion app. OTA functional states per §5. |
+| **Rationale** | | Cross-References: |
+| **Priority** | High |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** | [PRD §9.5] |
+
+
+<a id="srs-ux-0029"></a>
+
+| **SRS-UX-0029** | **The collar device LED shall remain continuously active during an OTA update, wit...** |
+|------------------|---------------------------------------------------------------------------------------|
+| **Statement** | The collar device LED shall remain continuously active during an OTA update, with no dark (LED-off) period exceeding 10 seconds during any OTA state expected to last >30 seconds, preventing the user from misinterpreting a prolonged dark period as a device failure or bricked state. |
+| **Rationale** | | Cross-References: |
+| **Priority** | Medium |
+| **Stability** | Stable |
+| **Verification** | Test |
+| **Traceability** |  |
 
 
 ## 15. Section 15
@@ -6289,7 +6641,7 @@ The Assumption Register catalogues the assumptions that underpin the requirement
 | Attribute | Value |
 |---|---|
 | **Total Sections** | 18 |
-| **Total Requirements** | 365 |
+| **Total Requirements** | 394 |
 | **Traceability Rows** | 292 |
 | **Standards Basis** | IEEE 830-1998 / ISO/IEC/IEEE 29148:2018 |
 | **Assumptions** | 25 (A-0001–A-0025) |
