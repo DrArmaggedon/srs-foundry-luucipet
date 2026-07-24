@@ -1,7 +1,7 @@
 {
   "project": "Luucipet",
   "session_id": "S-luucipet",
-  "last_updated": "2026-07-24T19:07:09Z",
+  "last_updated": "2026-07-24T19:55:00Z",
   "gates": {
     "PRD_PROCESSING": {
       "status": "PASS",
@@ -51,13 +51,17 @@
         "rtm-part-b.csv"
       ]
     },
-    "ASSEMBLY": {
-      "status": "PASS",
+    "ASSEMBLY_DRAFT": {
+      "status": "PENDING",
+      "artifacts": "24 part files in output/parts/",
+      "version": "v3"
+    },
+    "ASSEMBLY_MERGE": {
+      "status": "PENDING",
       "artifacts": [
         "SRS-LUUCIPET-FINAL.md",
         "SRS-LUUCIPET-FINAL.done"
-      ],
-      "version": "v2 \u2014 re-assembly with F1-F9 fixes"
+      ]
     }
   },
   "summary": {
